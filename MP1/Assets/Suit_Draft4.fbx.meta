@@ -1,0 +1,211 @@
+fileFormatVersion: 2
+guid: 80dc471858327bc40b442912c7b3e8d7
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Chest
+    100002: Helmet
+    100004: Hips
+    100006: LBoot
+    100008: LCalf
+    100010: LForearm
+    100012: LForearm.001
+    100014: LHand
+    100016: LThigh
+    100018: LUpperArm
+    100020: RBoot
+    100022: RCalf
+    100024: RHand
+    100026: RThigh
+    100028: RUpperArm
+    100030: //RootNode
+    100032: TankUnit
+    100034: Thruster
+    100036: Waist
+    100038: WingPort
+    100040: WingStbd
+    400000: Chest
+    400002: Helmet
+    400004: Hips
+    400006: LBoot
+    400008: LCalf
+    400010: LForearm
+    400012: LForearm.001
+    400014: LHand
+    400016: LThigh
+    400018: LUpperArm
+    400020: RBoot
+    400022: RCalf
+    400024: RHand
+    400026: RThigh
+    400028: RUpperArm
+    400030: //RootNode
+    400032: TankUnit
+    400034: Thruster
+    400036: Waist
+    400038: WingPort
+    400040: WingStbd
+    2100000: Material
+    2100002: Material.017
+    2100004: Material.020
+    2100006: Material.019
+    2100008: Material.016
+    2100010: Material.015
+    2100012: Material.014
+    2100014: No Name
+    2100016: Material.012
+    2100018: Material.013
+    2100020: Material.010
+    2100022: Material.011
+    2100024: Material.008
+    2100026: Material.009
+    2100028: Material.006
+    2100030: Material.007
+    2100032: Material.004
+    2100034: Material.005
+    2100036: Material.001
+    2100038: Material.002
+    2100040: Material.003
+    2300000: Chest
+    2300002: Helmet
+    2300004: Hips
+    2300006: LBoot
+    2300008: LCalf
+    2300010: LForearm
+    2300012: LForearm.001
+    2300014: LHand
+    2300016: LThigh
+    2300018: LUpperArm
+    2300020: RBoot
+    2300022: RCalf
+    2300024: RHand
+    2300026: RThigh
+    2300028: RUpperArm
+    2300030: TankUnit
+    2300032: Thruster
+    2300034: Waist
+    2300036: WingPort
+    2300038: WingStbd
+    3300000: Chest
+    3300002: Helmet
+    3300004: Hips
+    3300006: LBoot
+    3300008: LCalf
+    3300010: LForearm
+    3300012: LForearm.001
+    3300014: LHand
+    3300016: LThigh
+    3300018: LUpperArm
+    3300020: RBoot
+    3300022: RCalf
+    3300024: RHand
+    3300026: RThigh
+    3300028: RUpperArm
+    3300030: TankUnit
+    3300032: Thruster
+    3300034: Waist
+    3300036: WingPort
+    3300038: WingStbd
+    4300000: RThigh
+    4300002: RCalf
+    4300004: LForearm.001
+    4300006: RUpperArm
+    4300008: RHand
+    4300010: RBoot
+    4300012: LBoot
+    4300014: LCalf
+    4300016: LThigh
+    4300018: LHand
+    4300020: LForearm
+    4300022: LUpperArm
+    4300024: Hips
+    4300026: WingStbd
+    4300028: WingPort
+    4300030: Thruster
+    4300032: TankUnit
+    4300034: Waist
+    4300036: Chest
+    4300038: Helmet
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
