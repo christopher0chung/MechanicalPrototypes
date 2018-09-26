@@ -75,8 +75,8 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _PosterizeEffectScale: 0.88
-    - _PosterizePower: 71.82
+    - _PosterizeEffectScale: 0.699
+    - _PosterizePower: 100
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
