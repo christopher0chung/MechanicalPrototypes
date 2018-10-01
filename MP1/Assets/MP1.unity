@@ -7099,7 +7099,7 @@ MonoBehaviour:
   FogTransitionSize: 5
   MaxLightDistance: 128
   AboveFogPercent: 0.1
-  Offset: {x: 20311.559, y: 20311.559, z: 0}
+  Offset: {x: 20464.176, y: 20464.176, z: 0}
 --- !u!108 &374467953
 Light:
   m_ObjectHideFlags: 0
@@ -7110,7 +7110,7 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 0.5137255, g: 1, b: 0.73333335, a: 1}
-  m_Intensity: 4
+  m_Intensity: 10
   m_Range: 20
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -7132,7 +7132,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
@@ -30905,7 +30905,7 @@ Camera:
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
-  m_AllowMSAA: 1
+  m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
@@ -32267,7 +32267,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 4
+      scalar: 2
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -32792,7 +32792,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 40
+      scalar: 330
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -56670,7 +56670,7 @@ MonoBehaviour:
   TransparencySupport: 0
   transparencyDistance: 64
   BlurTransparency: 2
-  blurCount: 1
+  blurCount: 0
   BlurDepthFalloff: 5
   DownsampledBlurDepthFalloff: 5
   UpSampledblurCount: 0
