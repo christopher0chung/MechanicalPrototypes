@@ -17,6 +17,7 @@ public class MP1_PlayerExhaustionSystem : MonoBehaviour
     private Vector3 _exhBarScale;
     private SCG_FSM<MP1_PlayerExhaustionSystem> _fsm;
     private float _exertionAmount;
+    private float _taxationFraction;
 
     void Start()
     {
@@ -100,6 +101,12 @@ public class MP1_PlayerExhaustionSystem : MonoBehaviour
         _fsm.TransitionTo<State_Exert>();
     }
 
+    public void TaxingTask(float fraction)
+    {
+        _taxationFraction = fraction;
+        _fsm.TransitionTo<State_TaxedRecover>();
+    }
+
     public float ExhaustionThreshold()
     {
         return (.2f - .1f * (exhPercentage / 100));
@@ -119,7 +126,36 @@ public class MP1_PlayerExhaustionSystem : MonoBehaviour
         public override void Update()
         {
             base.Update();
-            Context.exhPercentage -= Context.recoveryCurve.Evaluate(Context.exhPercentage / 100) * Time.deltaTime * 24.33f;
+            Context.exhPercentage -= Context.recoveryCurve.Evaluate(Context.exhPercentage / 100) * 
+                Time.deltaTime * 
+                24.33f;
+        }
+    }
+
+    public class State_TaxedRecover : State_Base
+    {
+        private float taxTimer;
+        private float taxTimeOut = .25f;
+
+        public override void OnEnter()
+        {
+            base.OnEnter();
+            taxTimer = 0;
+        }
+
+        public override void Update()
+        {
+            base.Update();
+            Context.exhPercentage -= Context.recoveryCurve.Evaluate(Context.exhPercentage / 100) * 
+                Time.deltaTime * 
+                24.33f*
+                Context._taxationFraction;
+
+            taxTimer += Time.deltaTime;
+            if (taxTimer >= taxTimeOut)
+            {
+                TransitionTo<State_Recover>();
+            }
         }
     }
 

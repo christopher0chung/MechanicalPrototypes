@@ -12,9 +12,26 @@ public class TestPlayerController : MonoBehaviour {
 
     private Vector3 _thrustVector;
 
-    private SCG_FSM<TestPlayerController> _fsm;
+    private SCG_FSM<TestPlayerController> _fsm_Actions;
+    private SCG_FSM<TestPlayerController> _fsm_Movement;
 
     private LastFacingDirection _dir;
+    private MovementStates __mov;
+    private MovementStates _mov
+    {
+        get { return __mov; }
+        set
+        {
+            if (value != __mov)
+            {
+                __mov = value;
+                if (__mov == MovementStates.Move)
+                    _fsm_Movement.TransitionTo<M_State_Boost>();
+                else if (__mov == MovementStates.Static)
+                    _fsm_Movement.TransitionTo<M_State_Static>();
+            }
+        }
+    }
 
     private MP1_PlayerAirSystem _air;
     private MP1_PlayerExhaustionSystem _exh;
@@ -27,9 +44,9 @@ public class TestPlayerController : MonoBehaviour {
 	}
 	
 	void Update () {
-        _SetThrustVector();
-        _SetModelTempAnim();
-        _fsm.Update();
+
+        _fsm_Movement.Update();
+        _fsm_Actions.Update();
 
     }
 
@@ -45,8 +62,11 @@ public class TestPlayerController : MonoBehaviour {
         _rigidBody = GetComponent<Rigidbody>();
         _model = transform.GetChild(0);
 
-        _fsm = new SCG_FSM<TestPlayerController>(this);
-        _fsm.TransitionTo<State_NoInteraction>();
+        _fsm_Actions = new SCG_FSM<TestPlayerController>(this);
+        _fsm_Actions.TransitionTo<A_State_NoInteraction>();
+
+        _fsm_Movement = new SCG_FSM<TestPlayerController>(this);
+        _fsm_Movement.TransitionTo<M_State_Boost>();
 
         _air = GetComponent<MP1_PlayerAirSystem>();
         _exh = GetComponent<MP1_PlayerExhaustionSystem>();
@@ -112,12 +132,12 @@ public class TestPlayerController : MonoBehaviour {
 
     #region FSM States
 
-    public class State_Base : SCG_FSM<TestPlayerController>.State
+    public class A_State_Base : SCG_FSM<TestPlayerController>.State
     {
         protected Collider[] cols;
     }
 
-    public class State_NoInteraction : State_Base
+    public class A_State_NoInteraction : A_State_Base
     {
         Vector3 grabAreaDimensions = new Vector3(.1f, 1f, .1f);
 
@@ -150,7 +170,7 @@ public class TestPlayerController : MonoBehaviour {
                         if (cols[i].gameObject.tag == "Grabbable")
                         {
                             Context.grabbable = cols[i].gameObject;
-                            TransitionTo<State_Grab>();
+                            TransitionTo<A_State_Grab>();
                             //Debug.Log("Going to grab");
                         }
                     }
@@ -159,7 +179,7 @@ public class TestPlayerController : MonoBehaviour {
         }
     }
 
-    public class State_Grab : State_Base
+    public class A_State_Grab : A_State_Base
     {
         SCG_RigidBodySerialized rb;
 
@@ -184,7 +204,7 @@ public class TestPlayerController : MonoBehaviour {
 
             if (MP1_ServiceLocator.instance.InputBuffer.TimeSinceInactive(this.GetType(), KeyCode.J) >= Context._exh.ExhaustionThreshold())
             {
-                TransitionTo<State_GrabRecovery>();
+                TransitionTo<A_State_GrabRecovery>();
             }
         }
 
@@ -213,7 +233,7 @@ public class TestPlayerController : MonoBehaviour {
         }
     }
 
-    public class State_GrabRecovery : State_Base
+    public class A_State_GrabRecovery : A_State_Base
     {
         private float recoverTimer;
 
@@ -227,11 +247,42 @@ public class TestPlayerController : MonoBehaviour {
             base.Update();
             recoverTimer += Time.deltaTime;
             if (recoverTimer >= .7f)
-                TransitionTo<State_NoInteraction>();
+                TransitionTo<A_State_NoInteraction>();
         }
+    }
+
+    public class A_State_StaticActionOverTime : A_State_Base
+    {
+
+    }
+
+    public class M_State_Base : SCG_FSM<TestPlayerController>.State
+    {
+
+    }
+
+    public class M_State_Boost : M_State_Base
+    {
+        public override void Update()
+        {
+            base.Update();
+            Context._SetThrustVector();
+            Context._SetModelTempAnim();
+        }
+    }
+
+    public class M_State_Static : M_State_Base
+    {
+
+    }
+
+    public class M_State_Walk : M_State_Base
+    {
+
     }
 
     #endregion
 }
 
 public enum LastFacingDirection { Left, Right }
+public enum MovementStates { Move, Static }
