@@ -20,7 +20,7 @@ public class SCG_InputBuffer : MonoBehaviour {
     #endregion
 
     #region Private Properties
-    private float holdBufferThreshold = 0.15f;
+    private float holdBufferThreshold = 0.2f;
 
     private List<BufferedInputTracker> _activeKeys = new List<BufferedInputTracker>();
 
@@ -128,6 +128,13 @@ public class SCG_InputBuffer : MonoBehaviour {
         return b.keyRate;
     }
 
+    public float TimeSinceInactive(Type caller, KeyCode keyCode)
+    {
+        BufferedInputTracker b = _BufferCheck(caller, keyCode);
+
+        return b.timeSinceInactive;
+    }
+
     #endregion
 
     #region Internal Classes
@@ -178,6 +185,7 @@ public class SCG_InputBuffer : MonoBehaviour {
             _SetBufferFlags();
             _UpdateBufferClock();
             _CalculateKeyRate();
+            _CalculateTimeSinceInactive();
         }
 
         private void _SetBufferFlags()
@@ -187,6 +195,11 @@ public class SCG_InputBuffer : MonoBehaviour {
                 keyDown = true;
                 _tapTimes.Add(new TapTime());
                 _tapTimes[_tapTimes.Count - 1].pressTime = Time.time;
+
+                if (_tapTimes.Count >= 4)
+                {
+                    _tapTimes.RemoveAt(0);
+                }
             }
             else
                 keyDown = false;
@@ -243,6 +256,16 @@ public class SCG_InputBuffer : MonoBehaviour {
 
                 keyRate = (_tapTimes.Count - 1) / sum;
             }
+        }
+
+        private void _CalculateTimeSinceInactive()
+        {
+            if (Input.GetKeyDown(_keyCode))
+            {
+                timeSinceInactive = 0;
+            }
+
+            timeSinceInactive += Time.deltaTime;
         }
     }
 

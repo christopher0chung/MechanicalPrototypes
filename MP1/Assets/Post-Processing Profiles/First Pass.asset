@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a3bdb2cd68f901469e7cc149151eb49, type: 3}
-  m_Name: Basic
+  m_Name: First Pass
   m_EditorClassIdentifier: 
   debugViews:
     m_Enabled: 1
@@ -25,15 +25,15 @@ MonoBehaviour:
         motionVectorsResolution: 24
         motionVectorsAmplitude: 64
   fog:
-    m_Enabled: 0
+    m_Enabled: 1
     m_Settings:
       excludeSkybox: 1
   antialiasing:
-    m_Enabled: 1
+    m_Enabled: 0
     m_Settings:
       method: 0
       fxaaSettings:
-        preset: 0
+        preset: 2
       taaSettings:
         jitterSpread: 0.75
         sharpen: 0.3
@@ -69,13 +69,13 @@ MonoBehaviour:
       screenEdgeMask:
         intensity: 0.03
   depthOfField:
-    m_Enabled: 0
+    m_Enabled: 1
     m_Settings:
       focusDistance: 16
-      aperture: 1.5
-      focalLength: 111
+      aperture: 13
+      focalLength: 250
       useCameraFov: 0
-      kernelSize: 0
+      kernelSize: 3
   motionBlur:
     m_Enabled: 0
     m_Settings:
@@ -97,19 +97,19 @@ MonoBehaviour:
       logMin: -8
       logMax: 4
   bloom:
-    m_Enabled: 1
+    m_Enabled: 0
     m_Settings:
       bloom:
-        intensity: 1
-        threshold: 0.5
-        softKnee: 0.5
-        radius: 2
+        intensity: 0.4
+        threshold: 0.38
+        softKnee: 0.78
+        radius: 3.99
         antiFlicker: 1
       lensDirt:
         texture: {fileID: 0}
-        intensity: 0
+        intensity: 4.82
   colorGrading:
-    m_Enabled: 1
+    m_Enabled: 0
     m_Settings:
       tonemapping:
         tonemapper: 1
@@ -121,16 +121,16 @@ MonoBehaviour:
         neutralWhiteClip: 10
       basic:
         postExposure: 0
-        temperature: 0
-        tint: -13.9
-        hueShift: 20
-        saturation: 1
-        contrast: 1.155
+        temperature: -7
+        tint: -40
+        hueShift: -12
+        saturation: 1.6
+        contrast: 0.93
       channelMixer:
         red: {x: 1, y: 0, z: 0}
         green: {x: 0, y: 1, z: 0}
         blue: {x: 0, y: 0, z: 1}
-        currentEditingChannel: 2
+        currentEditingChannel: 0
       colorWheels:
         mode: 1
         log:
