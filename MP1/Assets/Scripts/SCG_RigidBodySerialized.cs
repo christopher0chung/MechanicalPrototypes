@@ -25,6 +25,25 @@ public class SCG_RigidBodySerialized {
         constraints = rigidbody.constraints;
     }
 
+    public SCG_RigidBodySerialized(float mass, 
+        float drag, 
+        float angDrag, 
+        bool useGravity,
+        bool isKinematic, 
+        RigidbodyInterpolation interpolation, 
+        CollisionDetectionMode collDetect, 
+        RigidbodyConstraints constraints)
+    {
+        this.mass = mass;
+        this.drag = drag;
+        this.angDrag = angDrag;
+        this.useGravity = useGravity;
+        this.isKinematic = isKinematic;
+        this.interpolate = interpolation;
+        this.collDetect = collDetect;
+        this.constraints = constraints;
+    }
+
     public void RestoreRigidbody(Rigidbody rigidbody)
     {
         rigidbody.mass = mass;

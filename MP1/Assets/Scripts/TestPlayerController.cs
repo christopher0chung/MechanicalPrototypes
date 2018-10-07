@@ -271,9 +271,21 @@ public class TestPlayerController : MonoBehaviour {
         }
     }
 
+    public class M_State_Stationary : M_State_Base
+    {
+        public override void Update()
+        {
+            base.Update();
+            Context._SetModelTempAnim();
+        }
+    }
+
     public class M_State_Static : M_State_Base
     {
-
+        public override void Update()
+        {
+            base.Update();
+        }
     }
 
     public class M_State_Walk : M_State_Base
