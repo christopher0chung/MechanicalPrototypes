@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MP1_Item : MP1_PhysicalForm
+public class MP1_ItemBody : MP1_PhysicalForm
 {
     // The class handles the physical aspects of the itemss
 
@@ -56,7 +56,7 @@ public class ItemData : MP1_Data
     public float capacity;
     private ItemStates _state;
     private SCG_RigidBodySerialized _rigidBody;
-    private MP1_Item _physicalForm;
+    private MP1_ItemBody _physicalForm;
 
     public ItemData (Items itemType, float capacity)
     {
@@ -108,7 +108,7 @@ public class ItemData : MP1_Data
 
     #region Internal Functions
 
-    private void _MakeALooseBody(Vector3 where, MP1_Item item)
+    private void _MakeALooseBody(Vector3 where, MP1_ItemBody item)
     {
         _physicalForm = item;
         _physicalForm.Init(this, where);
@@ -117,7 +117,7 @@ public class ItemData : MP1_Data
     private void _MakeABody(Vector3 where)
     {
         GameObject gO = new GameObject();
-        _physicalForm = gO.AddComponent<MP1_Item>();
+        _physicalForm = gO.AddComponent<MP1_ItemBody>();
         _physicalForm.Init(this, where);
     }
 
@@ -133,8 +133,10 @@ public class ItemData : MP1_Data
     }
 
     #endregion
+    
+    
     // Called by MP1_Item if and only if a loose item at start of level.
-    public void LooseInit(Vector3 where, MP1_Item looseObject)
+    public void LooseInit(Vector3 where, MP1_ItemBody looseObject)
     {
         _state = ItemStates.Free;
         _MakeALooseBody(where, looseObject);

@@ -89,11 +89,11 @@ public class MP1_ItemsManager {
         {
             if (info.transform.root.GetComponent<MP1_PhysicalForm>())
             {
-                if (info.transform.root.GetComponent<MP1_PhysicalForm>().GetType() == typeof(MP1_Item))
+                if (info.transform.root.GetComponent<MP1_PhysicalForm>().GetType() == typeof(MP1_ItemBody))
                 {
-                    if (_sceneItems.Contains((ItemData)info.transform.root.GetComponent<MP1_Item>().data))
+                    if (_sceneItems.Contains((ItemData)info.transform.root.GetComponent<MP1_ItemBody>().data))
                     {
-                        _SetRefHighlighted(ID, (ItemData)info.transform.root.GetComponent<MP1_Item>().data);
+                        _SetRefHighlighted(ID, (ItemData)info.transform.root.GetComponent<MP1_ItemBody>().data);
                     }
 
                     for (int i = 0; i < _sceneItems.Count; i++)
