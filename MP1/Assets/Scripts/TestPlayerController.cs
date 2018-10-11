@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class TestPlayerController : MonoBehaviour {
 
@@ -8,6 +9,7 @@ public class TestPlayerController : MonoBehaviour {
     private Rigidbody _rigidBody;
     private Transform _model;
     private Transform _grabOffset;
+    private ShowGrabbedItems _showGrabbedItems;
     //protected GameObject grabbable;
 
     private Vector3 _thrustVector;
@@ -36,10 +38,26 @@ public class TestPlayerController : MonoBehaviour {
     private MP1_PlayerAirSystem _air;
     private MP1_PlayerExhaustionSystem _exh;
 
-    private ItemData _heldItem;
+    private ItemData _h;
+    private ItemData _heldItem
+    {
+        get { return _h; }
+        set
+        {
+            if (value != _h)
+            {
+                _h = value;
+                if (_h == null)
+                    _showGrabbedItems.ShowHeld(null);
+                else
+                    _showGrabbedItems.ShowHeld(_h.itemType.ToString());
+            }
+        }
+    }
     #endregion
 
     public float thrustMagnitude;
+    public PlayerID ID{ get; private set;}
 
     void Start () {
         _Initialize();
@@ -72,6 +90,10 @@ public class TestPlayerController : MonoBehaviour {
 
         _air = GetComponent<MP1_PlayerAirSystem>();
         _exh = GetComponent<MP1_PlayerExhaustionSystem>();
+
+        g += GrabCallback;
+        r += ReleaseCallback;
+        s += StageCallback;
     }
 
     private void _SetThrustVector()
@@ -123,6 +145,30 @@ public class TestPlayerController : MonoBehaviour {
 
     #endregion
 
+    #region Callbacks
+    public delegate void grabCallback(ItemData i);
+    private grabCallback g;
+    public delegate void releaseCallback();
+    private releaseCallback r;
+    public delegate void stageCallback();
+    private stageCallback s;
+
+    public void GrabCallback(ItemData i)
+    {
+        _heldItem = i;
+    }
+
+    public void ReleaseCallback()
+    {
+        _heldItem = null;
+    }
+
+    public void StageCallback()
+    {
+        _heldItem = null;
+    }
+    #endregion
+
     #region Public Functions
 
     public void SetGrabOffset(Transform grab)
@@ -133,6 +179,11 @@ public class TestPlayerController : MonoBehaviour {
     public Transform GetGrabOffset()
     {
         return _grabOffset;
+    }
+
+    public void SetShowGrabbedItems(ShowGrabbedItems s)
+    {
+        _showGrabbedItems = s;
     }
 
     #endregion
@@ -146,7 +197,7 @@ public class TestPlayerController : MonoBehaviour {
 
     public class A_State_NoInteraction : A_State_Base
     {
-        Vector3 grabAreaDimensions = new Vector3(.1f, 1f, .1f);
+        Vector3 grabAreaDimensions = new Vector3(.1f, 2f, .1f);
 
         public override void OnEnter()
         {
@@ -162,6 +213,7 @@ public class TestPlayerController : MonoBehaviour {
                     cols = Physics.OverlapBox(Context.transform.position - 
                         Vector3.right * Context._grabOffset.localPosition.z + 
                         Vector3.up, grabAreaDimensions);
+                    //Debug.Log(cols.Length);
                 }
                 else
                 {
@@ -174,9 +226,11 @@ public class TestPlayerController : MonoBehaviour {
                     //Debug.Log(cols.Length);
                     for (int i = 0; i < cols.Length; i++)
                     {
-                        if (cols[i].gameObject.tag == "Grabbable")
+                        if (cols[i].transform.root.gameObject.GetComponent<MP1_Item>())
                         {
+                            //Debug.Log("MP1_Item found");
                             //Context.grabbable = cols[i].gameObject;
+                            MP1_ServiceLocator.instance.ItemsManager.RequestToHoldItem(cols[i].transform.root.gameObject.GetComponent<MP1_Item>().data as ItemData, Context, Context.g);
                             TransitionTo<A_State_Grab>();
                             //Debug.Log("Going to grab");
                         }
@@ -194,13 +248,7 @@ public class TestPlayerController : MonoBehaviour {
         {
             base.OnEnter();
 
-            //rb = new SCG_RigidBodySerialized(Context.grabbable.GetComponent<Rigidbody>());
-            Context._rigidBody.mass += rb.mass;
-            //Destroy(Context.grabbable.GetComponent<Rigidbody>());
-
-            //Context.grabbable.transform.SetParent(Context._grabOffset);
-            //Context.grabbable.transform.localPosition = Vector3.zero;
-            //Context.grabbable.GetComponent<Rigidbody>().detectCollisions = false;
+            Context._rigidBody.mass += Context._heldItem.GetSerializedRigidbody().mass;
         }
 
         public override void Update()
@@ -221,6 +269,8 @@ public class TestPlayerController : MonoBehaviour {
 
         public override void OnExit()
         {
+            Context._rigidBody.mass -= Context._heldItem.GetSerializedRigidbody().mass;
+            MP1_ServiceLocator.instance.ItemsManager.RequestToReleaseItem(Context._heldItem, Context,Context._dir, Context.r);
             //base.OnExit();
             //Context.grabbable.transform.SetParent(null);
 

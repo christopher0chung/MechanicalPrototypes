@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MP1_Item : MonoBehaviour
+public class MP1_Item : MP1_PhysicalForm
 {
     // The class handles the physical aspects of the itemss
 
@@ -16,28 +16,32 @@ public class MP1_Item : MonoBehaviour
     public Items itemType;
     public float startingCapacity;
 
-    public ItemData itemData;
+    //public ItemData itemData;
 
     public void Start()
     {
         if (startingLooseObject)
-        {          
-            Init(new ItemData(this.itemType, this.startingCapacity), transform.position);
+        {
+            ItemData i = new ItemData(this.itemType, this.startingCapacity);
+            i.LooseInit(transform.position, this);
         }
     }
 
     public void Init(ItemData itemData, Vector3 where)
     {
-        this.itemData = itemData;
+        data = (ItemData)itemData;
+        ItemData i = data as ItemData;
 
         gameObject.name = itemData.itemType.ToString();
 
         transform.position = where;
 
+        gameObject.layer = 9;
         gameObject.AddComponent<Rigidbody>();
-        this.itemData.GetSerializedRigidbody().RestoreRigidbody(GetComponent<Rigidbody>());
+        i.GetSerializedRigidbody().RestoreRigidbody(GetComponent<Rigidbody>());
 
-        GameObject gO = Instantiate(Resources.Load<GameObject>(this.itemData.itemType.ToString() + "_Prefab"), transform.position, transform.rotation, transform);
+        GameObject gO = Instantiate(Resources.Load<GameObject>(i.itemType.ToString() + "_Prefab"), transform.position, Quaternion.Euler(-90, 0, 0), transform);
+        transform.Rotate(Vector3.forward, Random.Range(-180, 180));
     }
 
     public void CleanUp()
@@ -46,11 +50,10 @@ public class MP1_Item : MonoBehaviour
     }
 }
 
-public class ItemData
+public class ItemData : MP1_Data
 {
     public Items itemType;
     public float capacity;
-    private bool _carryable;
     private ItemStates _state;
     private SCG_RigidBodySerialized _rigidBody;
     private MP1_Item _physicalForm;
@@ -105,11 +108,17 @@ public class ItemData
 
     #region Internal Functions
 
+    private void _MakeALooseBody(Vector3 where, MP1_Item item)
+    {
+        _physicalForm = item;
+        _physicalForm.Init(this, where);
+    }
+
     private void _MakeABody(Vector3 where)
     {
         GameObject gO = new GameObject();
-        MP1_Item i = gO.AddComponent<MP1_Item>();
-        i.Init(this, where);
+        _physicalForm = gO.AddComponent<MP1_Item>();
+        _physicalForm.Init(this, where);
     }
 
     private void _Launch(Vector3 direction, float launchImpulse)
@@ -124,8 +133,14 @@ public class ItemData
     }
 
     #endregion
+    // Called by MP1_Item if and only if a loose item at start of level.
+    public void LooseInit(Vector3 where, MP1_Item looseObject)
+    {
+        _state = ItemStates.Free;
+        _MakeALooseBody(where, looseObject);
+    }
 
-
+    // Called by MP1_ItemManager
     public void Hold()
     {
         _state = ItemStates.Held;
