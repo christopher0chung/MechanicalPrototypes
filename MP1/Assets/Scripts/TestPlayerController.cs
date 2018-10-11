@@ -38,8 +38,8 @@ public class TestPlayerController : MonoBehaviour {
     private MP1_PlayerAirSystem _air;
     private MP1_PlayerExhaustionSystem _exh;
 
-    private ItemData _h;
-    private ItemData _heldItem
+    private MP1_ItemData _h;
+    private MP1_ItemData _heldItem
     {
         get { return _h; }
         set
@@ -157,7 +157,7 @@ public class TestPlayerController : MonoBehaviour {
     #endregion
 
     #region Pseudo-Callbacks
-    public void GrabCallback(ItemData i)
+    public void GrabCallback(MP1_ItemData i)
     {
         _heldItem = i;
     }

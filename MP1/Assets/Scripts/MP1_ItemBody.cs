@@ -22,15 +22,15 @@ public class MP1_ItemBody : MP1_PhysicalForm
     {
         if (startingLooseObject)
         {
-            ItemData i = new ItemData(this.itemType, this.startingCapacity);
+            MP1_ItemData i = new MP1_ItemData(this.itemType, this.startingCapacity);
             i.LooseInit(transform.position, this);
         }
     }
 
-    public void Init(ItemData itemData, Vector3 where)
+    public void Init(MP1_ItemData itemData, Vector3 where)
     {
-        data = (ItemData)itemData;
-        ItemData i = data as ItemData;
+        data = (MP1_ItemData)itemData;
+        MP1_ItemData i = data as MP1_ItemData;
 
         gameObject.name = itemData.itemType.ToString();
 
@@ -50,7 +50,7 @@ public class MP1_ItemBody : MP1_PhysicalForm
     }
 }
 
-public class ItemData : MP1_Data
+public class MP1_ItemData : MP1_Data
 {
     public Items itemType;
     public float capacity;
@@ -58,7 +58,7 @@ public class ItemData : MP1_Data
     private SCG_RigidBodySerialized _rigidBody;
     private MP1_ItemBody _physicalForm;
 
-    public ItemData (Items itemType, float capacity)
+    public MP1_ItemData (Items itemType, float capacity)
     {
         this.itemType = itemType;
 

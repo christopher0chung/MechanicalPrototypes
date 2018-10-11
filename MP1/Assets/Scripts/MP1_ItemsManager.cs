@@ -5,14 +5,14 @@ using System;
 
 public class MP1_ItemsManager {
 
-    private List<ItemData> _sceneItems;
+    private List<MP1_ItemData> _sceneItems;
 
     public MP1_ItemsManager()
     {
-        _sceneItems = new List<ItemData>();
+        _sceneItems = new List<MP1_ItemData>();
     }
 
-    public bool Register(ItemData item)
+    public bool Register(MP1_ItemData item)
     {
         if (_sceneItems.Contains(item))
             return false;
@@ -91,9 +91,9 @@ public class MP1_ItemsManager {
             {
                 if (info.transform.root.GetComponent<MP1_PhysicalForm>().GetType() == typeof(MP1_ItemBody))
                 {
-                    if (_sceneItems.Contains((ItemData)info.transform.root.GetComponent<MP1_ItemBody>().data))
+                    if (_sceneItems.Contains((MP1_ItemData)info.transform.root.GetComponent<MP1_ItemBody>().data))
                     {
-                        _SetRefHighlighted(ID, (ItemData)info.transform.root.GetComponent<MP1_ItemBody>().data);
+                        _SetRefHighlighted(ID, (MP1_ItemData)info.transform.root.GetComponent<MP1_ItemBody>().data);
                     }
 
                     for (int i = 0; i < _sceneItems.Count; i++)
@@ -138,13 +138,13 @@ public class MP1_ItemsManager {
     public void Muscle(PlayerID ID)
     {
         Debug.Log(_GetRefHighlighted(ID).GetType().ToString());
-        if (_GetRefHighlighted(ID).GetType() == typeof(ItemData))
+        if (_GetRefHighlighted(ID).GetType() == typeof(MP1_ItemData))
         {
-            RequestToHoldItem((ItemData)_GetRefHighlighted(ID), _GetRefController(ID));
+            RequestToHoldItem((MP1_ItemData)_GetRefHighlighted(ID), _GetRefController(ID));
         }
     }
        
-    public void RequestToHoldItem(ItemData item, TestPlayerController player)
+    public void RequestToHoldItem(MP1_ItemData item, TestPlayerController player)
     {
         Debug.Assert(_sceneItems.Contains(item), "Modifying unregistered item");
         Debug.Assert(item.GetState() == ItemStates.Free, "Attempting to control a non-free item");
@@ -154,7 +154,7 @@ public class MP1_ItemsManager {
         player.GrabCallback(item);
     }
 
-    public void RequestToStageItem(ItemData item, MP1_Equipment equipment)
+    public void RequestToStageItem(MP1_ItemData item, MP1_Equipment equipment)
     {
         Debug.Assert(_sceneItems.Contains(item), "Modifying unregistered item");
         Debug.Assert(item.GetState() == ItemStates.Held, "Attempting to stage a uncontrolled item");
@@ -163,7 +163,7 @@ public class MP1_ItemsManager {
         item.MakeStaged();
     }
 
-    public void RequestToReleaseItem(ItemData item, TestPlayerController player, LastFacingDirection lastFacingDirection)
+    public void RequestToReleaseItem(MP1_ItemData item, TestPlayerController player, LastFacingDirection lastFacingDirection)
     {
         Debug.Assert(_sceneItems.Contains(item), "Modifying unregistered item");
         Debug.Assert(item.GetState() == ItemStates.Held, "Attempting to release an non-held item");
@@ -178,7 +178,7 @@ public class MP1_ItemsManager {
         player.ReleaseCallback();
     }
 
-    public void RequestToLaunchItem(ItemData item, MP1_Equipment equipment, Vector3 direction, float launchImpulse)
+    public void RequestToLaunchItem(MP1_ItemData item, MP1_Equipment equipment, Vector3 direction, float launchImpulse)
     {
         Debug.Assert(_sceneItems.Contains(item), "Modifying unregistered item");
         Debug.Assert(item.GetState() == ItemStates.Staged, "Attempting to launch unstaged item");
