@@ -141,25 +141,25 @@ public class ItemData : MP1_Data
     }
 
     // Called by MP1_ItemManager
-    public void Hold()
+    public void MakeHeld()
     {
         _state = ItemStates.Held;
         _RemoveBody();
     }
 
-    public void Stage()
+    public void MakeStaged()
     {
         _state = ItemStates.Staged;
         _RemoveBody();
     }
 
-    public void LetGo(Vector3 where)
+    public void MakeFree(Vector3 where)
     {
         _state = ItemStates.Free;
         _MakeABody(where);
     }
 
-    public void Unstage(Vector3 where, Vector3 direction, float launchImpulse)
+    public void MakeLaunched(Vector3 where, Vector3 direction, float launchImpulse)
     {
         _state = ItemStates.Free;
         _MakeABody(where);

@@ -44,6 +44,7 @@ public class TestPlayerController : MonoBehaviour {
         get { return _h; }
         set
         {
+            Debug.Log("Attempt made to set _heldItem");
             if (value != _h)
             {
                 _h = value;
@@ -54,6 +55,8 @@ public class TestPlayerController : MonoBehaviour {
             }
         }
     }
+
+    public Transform headLamp;
     #endregion
 
     public float thrustMagnitude;
@@ -91,9 +94,7 @@ public class TestPlayerController : MonoBehaviour {
         _air = GetComponent<MP1_PlayerAirSystem>();
         _exh = GetComponent<MP1_PlayerExhaustionSystem>();
 
-        g += GrabCallback;
-        r += ReleaseCallback;
-        s += StageCallback;
+        MP1_ServiceLocator.instance.ItemsManager.RegisterPlayerControllers(this);
     }
 
     private void _SetThrustVector()
@@ -143,16 +144,19 @@ public class TestPlayerController : MonoBehaviour {
         }
     }
 
+    private void _SetHeadLampAngle()
+    {
+        if (Input.GetKey(KeyCode.U))
+            headLamp.Rotate(Vector3.right, -90 * Time.deltaTime);
+        if (Input.GetKey(KeyCode.I))
+            headLamp.Rotate(Vector3.right, 90 * Time.deltaTime);
+
+        MP1_ServiceLocator.instance.ItemsManager.PlayerInteractSelect(ID, headLamp.position, headLamp.forward);
+    }
+
     #endregion
 
-    #region Callbacks
-    public delegate void grabCallback(ItemData i);
-    private grabCallback g;
-    public delegate void releaseCallback();
-    private releaseCallback r;
-    public delegate void stageCallback();
-    private stageCallback s;
-
+    #region Pseudo-Callbacks
     public void GrabCallback(ItemData i)
     {
         _heldItem = i;
@@ -208,34 +212,40 @@ public class TestPlayerController : MonoBehaviour {
         {
             if (MP1_ServiceLocator.instance.InputBuffer.KeyDown(Context.GetType(), KeyCode.J))
             {
-                if (Context._dir == LastFacingDirection.Left)
+                if (MP1_ServiceLocator.instance.ItemsManager.RequestToMuscle(Context.ID))
                 {
-                    cols = Physics.OverlapBox(Context.transform.position - 
-                        Vector3.right * Context._grabOffset.localPosition.z + 
-                        Vector3.up, grabAreaDimensions);
-                    //Debug.Log(cols.Length);
+                    MP1_ServiceLocator.instance.ItemsManager.Muscle(Context.ID);
+                    TransitionTo<A_State_Grab>();
                 }
-                else
-                {
-                    cols = Physics.OverlapBox(Context.transform.position + 
-                        Vector3.right * Context._grabOffset.localPosition.z + 
-                        Vector3.up, grabAreaDimensions);
-                }
-                if (cols.Length > 0)
-                {
-                    //Debug.Log(cols.Length);
-                    for (int i = 0; i < cols.Length; i++)
-                    {
-                        if (cols[i].transform.root.gameObject.GetComponent<MP1_Item>())
-                        {
-                            //Debug.Log("MP1_Item found");
-                            //Context.grabbable = cols[i].gameObject;
-                            MP1_ServiceLocator.instance.ItemsManager.RequestToHoldItem(cols[i].transform.root.gameObject.GetComponent<MP1_Item>().data as ItemData, Context, Context.g);
-                            TransitionTo<A_State_Grab>();
-                            //Debug.Log("Going to grab");
-                        }
-                    }
-                }
+
+                //if (Context._dir == LastFacingDirection.Left)
+                //{
+                //    cols = Physics.OverlapBox(Context.transform.position - 
+                //        Vector3.right * Context._grabOffset.localPosition.z + 
+                //        Vector3.up, grabAreaDimensions);
+                //    //Debug.Log(cols.Length);
+                //}
+                //else
+                //{
+                //    cols = Physics.OverlapBox(Context.transform.position + 
+                //        Vector3.right * Context._grabOffset.localPosition.z + 
+                //        Vector3.up, grabAreaDimensions);
+                //}
+                //if (cols.Length > 0)
+                //{
+                //    //Debug.Log(cols.Length);
+                //    for (int i = 0; i < cols.Length; i++)
+                //    {
+                //        if (cols[i].transform.root.gameObject.GetComponent<MP1_Item>())
+                //        {
+                //            //Debug.Log("MP1_Item found");
+                //            //Context.grabbable = cols[i].gameObject;
+                //            MP1_ServiceLocator.instance.ItemsManager.RequestToHoldItem(cols[i].transform.root.gameObject.GetComponent<MP1_Item>().data as ItemData, Context, Context.g);
+                //            TransitionTo<A_State_Grab>();
+                //            //Debug.Log("Going to grab");
+                //        }
+                //    }
+                //}
             }
         }
     }
@@ -270,7 +280,7 @@ public class TestPlayerController : MonoBehaviour {
         public override void OnExit()
         {
             Context._rigidBody.mass -= Context._heldItem.GetSerializedRigidbody().mass;
-            MP1_ServiceLocator.instance.ItemsManager.RequestToReleaseItem(Context._heldItem, Context,Context._dir, Context.r);
+            MP1_ServiceLocator.instance.ItemsManager.RequestToReleaseItem(Context._heldItem, Context,Context._dir);
             //base.OnExit();
             //Context.grabbable.transform.SetParent(null);
 
@@ -329,6 +339,7 @@ public class TestPlayerController : MonoBehaviour {
             base.Update();
             Context._SetThrustVector();
             Context._SetModelTempAnim();
+            Context._SetHeadLampAngle();
         }
     }
 
@@ -338,6 +349,7 @@ public class TestPlayerController : MonoBehaviour {
         {
             base.Update();
             Context._SetModelTempAnim();
+            Context._SetHeadLampAngle();
         }
     }
 
