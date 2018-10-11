@@ -2,12 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class MP1_Interactables : MonoBehaviour
-{
-    public abstract void Muscle();
-
-    public abstract void Operate();
-}
+public abstract class MP1_Interactables : MonoBehaviour{ }
 
 public enum Items { O2Tank, ArTank, PatchPlate, Battery, Obstruction }
 public enum Equipment { Welder, Door, O2Charger, ArCharger, BatteryCharger, Accumulator, PneumaticWrench, Lockers }

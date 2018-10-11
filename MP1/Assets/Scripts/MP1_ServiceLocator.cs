@@ -30,5 +30,29 @@ public class MP1_ServiceLocator {
         }
     }
 
+    private SCG_EventManager _em;
+    public SCG_EventManager EventManager
+    {
+        get
+        {
+            if (_em == null)
+                return _em = new SCG_EventManager();
+            else
+                return _em;
+        }
+    }
+
+    private MP1_ItemsManager _im;
+    public MP1_ItemsManager ItemsManager
+    {
+        get
+        {
+            if (_im == null)
+                return _im = new MP1_ItemsManager();
+            else
+                return _im;
+        }
+    }
+
     #endregion
 }

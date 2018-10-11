@@ -8,7 +8,7 @@ public class TestPlayerController : MonoBehaviour {
     private Rigidbody _rigidBody;
     private Transform _model;
     private Transform _grabOffset;
-    protected GameObject grabbable;
+    //protected GameObject grabbable;
 
     private Vector3 _thrustVector;
 
@@ -35,6 +35,8 @@ public class TestPlayerController : MonoBehaviour {
 
     private MP1_PlayerAirSystem _air;
     private MP1_PlayerExhaustionSystem _exh;
+
+    private ItemData _heldItem;
     #endregion
 
     public float thrustMagnitude;
@@ -128,6 +130,11 @@ public class TestPlayerController : MonoBehaviour {
         _grabOffset = grab;
     }
 
+    public Transform GetGrabOffset()
+    {
+        return _grabOffset;
+    }
+
     #endregion
 
     #region FSM States
@@ -144,7 +151,7 @@ public class TestPlayerController : MonoBehaviour {
         public override void OnEnter()
         {
             base.OnEnter();
-            Context.grabbable = null;
+            //Context.grabbable = null;
         }
         public override void Update()
         {
@@ -169,7 +176,7 @@ public class TestPlayerController : MonoBehaviour {
                     {
                         if (cols[i].gameObject.tag == "Grabbable")
                         {
-                            Context.grabbable = cols[i].gameObject;
+                            //Context.grabbable = cols[i].gameObject;
                             TransitionTo<A_State_Grab>();
                             //Debug.Log("Going to grab");
                         }
@@ -187,49 +194,53 @@ public class TestPlayerController : MonoBehaviour {
         {
             base.OnEnter();
 
-            rb = new SCG_RigidBodySerialized(Context.grabbable.GetComponent<Rigidbody>());
+            //rb = new SCG_RigidBodySerialized(Context.grabbable.GetComponent<Rigidbody>());
             Context._rigidBody.mass += rb.mass;
-            Destroy(Context.grabbable.GetComponent<Rigidbody>());
+            //Destroy(Context.grabbable.GetComponent<Rigidbody>());
 
-            Context.grabbable.transform.SetParent(Context._grabOffset);
-            Context.grabbable.transform.localPosition = Vector3.zero;
-            Context.grabbable.GetComponent<Rigidbody>().detectCollisions = false;
+            //Context.grabbable.transform.SetParent(Context._grabOffset);
+            //Context.grabbable.transform.localPosition = Vector3.zero;
+            //Context.grabbable.GetComponent<Rigidbody>().detectCollisions = false;
         }
 
         public override void Update()
         {
             //Debug.Log(MP1_ServiceLocator.instance.InputBuffer.KeyRate(this.GetType(), KeyCode.J));
-
-            Context._exh.Exert(3 * Time.deltaTime);
-
-            if (MP1_ServiceLocator.instance.InputBuffer.TimeSinceInactive(this.GetType(), KeyCode.J) >= Context._exh.ExhaustionThreshold())
+            if (Context._fsm_Movement.CurrentState.ToString() == typeof(M_State_Boost).ToString() ||
+                Context._fsm_Movement.CurrentState.ToString() == typeof(M_State_Walk).ToString())
             {
-                TransitionTo<A_State_GrabRecovery>();
+                Context._exh.Exert(3 * Time.deltaTime);
+
+                if (MP1_ServiceLocator.instance.InputBuffer.TimeSinceInactive(this.GetType(), KeyCode.J) >= Context._exh.ExhaustionThreshold())
+                {
+                    TransitionTo<A_State_GrabRecovery>();
+                }
             }
+
         }
 
         public override void OnExit()
         {
-            base.OnExit();
-            Context.grabbable.transform.SetParent(null);
+            //base.OnExit();
+            //Context.grabbable.transform.SetParent(null);
 
-            rb.RestoreRigidbody(Context.grabbable.AddComponent<Rigidbody>());
-            Context._rigidBody.mass -= rb.mass;
+            //rb.RestoreRigidbody(Context.grabbable.AddComponent<Rigidbody>());
+            //Context._rigidBody.mass -= rb.mass;
 
-            if (Context._dir == LastFacingDirection.Left)
-            {
-                Context.grabbable.transform.position = 
-                    Context.transform.position + 
-                    Vector3.up * Context._grabOffset.transform.localPosition.y -
-                    Vector3.right * Context._grabOffset.transform.localPosition.z;
-            }
-            else
-            {
-                Context.grabbable.transform.position =
-                    Context.transform.position +
-                    Vector3.up * Context._grabOffset.transform.localPosition.y +
-                    Vector3.right * Context._grabOffset.transform.localPosition.z;
-            }
+            //if (Context._dir == LastFacingDirection.Left)
+            //{
+            //    Context.grabbable.transform.position = 
+            //        Context.transform.position + 
+            //        Vector3.up * Context._grabOffset.transform.localPosition.y -
+            //        Vector3.right * Context._grabOffset.transform.localPosition.z;
+            //}
+            //else
+            //{
+            //    Context.grabbable.transform.position =
+            //        Context.transform.position +
+            //        Vector3.up * Context._grabOffset.transform.localPosition.y +
+            //        Vector3.right * Context._grabOffset.transform.localPosition.z;
+            //}
         }
     }
 

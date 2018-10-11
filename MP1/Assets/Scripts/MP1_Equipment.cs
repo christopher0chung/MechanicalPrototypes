@@ -2,8 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MP1_Equipment : MP1_Interactables
+public class MP1_Equipment : MonoBehaviour
 {
+    // Equipment are objects in the game that let the player act upon other objects indirectly
+    // Equipment types determine certain properties
+    // Carryable equipment is carryable by the player
+    // Type determines rigidbody properties
+    // Equipment can be damaged
+    // Interaction with and through equipment is handled via menu
+    // Equipment may have requirements in order to operate
+
     protected SCG_RigidBodySerialized _serializedRigidBody;
 
     public Equipment equipmentType;
@@ -44,16 +52,6 @@ public class MP1_Equipment : MP1_Interactables
         GameObject gO = Instantiate<GameObject>(Resources.Load<GameObject>(equipmentData.equipmentType.ToString() + "_Prefab"), transform.position, transform.rotation, transform);
     }
 
-    public override void Muscle()
-    {
-
-    }
-
-    public override void Operate()
-    {
-
-    }
-
     public bool AttemptGrab()
     {
         return equipmentData.IfCarryable();
@@ -75,13 +73,13 @@ public class MP1_Equipment : MP1_Interactables
 public class EquipmentData
 {
     public Equipment equipmentType;
-    public bool _damaged;
+    public bool damaged;
     private bool _carryable;
 
     public EquipmentData(Equipment equipmentType, bool damaged)
     {
         this.equipmentType = equipmentType;
-        this._damaged = damaged;
+        this.damaged = damaged;
 
         if (equipmentType == Equipment.Welder || equipmentType == Equipment.PneumaticWrench)
             _carryable = true;

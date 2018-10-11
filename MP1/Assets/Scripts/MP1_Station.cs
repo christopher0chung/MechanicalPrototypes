@@ -2,15 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MP1_Station : MP1_Interactables
+public class MP1_Station : MonoBehaviour
 {
-    public override void Muscle()
-    {
 
-    }
-
-    public override void Operate()
-    {
-
-    }
 }
