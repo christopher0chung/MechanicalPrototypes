@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MP1_ItemBody : MP1_PhysicalForm
 {
-    // The class handles the physical aspects of the itemss
+    // The class handles the physical aspects of the items
 
     // Items are objects in the game that are acted upon and consumed
     // Their types determine certain properties
@@ -13,16 +13,14 @@ public class MP1_ItemBody : MP1_PhysicalForm
     // Items may have a consumable and replenishable resource associated with them
 
     public bool startingLooseObject;
-    public Items itemType;
+    public Items startingItemType;
     public float startingCapacity;
-
-    //public ItemData itemData;
 
     public void Start()
     {
         if (startingLooseObject)
         {
-            MP1_ItemData i = new MP1_ItemData(this.itemType, this.startingCapacity);
+            MP1_ItemData i = new MP1_ItemData(this.startingItemType, this.startingCapacity);
             i.LooseInit(transform.position, this);
         }
     }
@@ -40,7 +38,7 @@ public class MP1_ItemBody : MP1_PhysicalForm
         gameObject.AddComponent<Rigidbody>();
         i.GetSerializedRigidbody().RestoreRigidbody(GetComponent<Rigidbody>());
 
-        GameObject gO = Instantiate(Resources.Load<GameObject>(i.itemType.ToString() + "_Prefab"), transform.position, Quaternion.Euler(-90, 0, 0), transform);
+        GameObject gO = Instantiate(Resources.Load<GameObject>(i.itemType.ToString() + "_Prefab"), transform.position, Quaternion.identity, transform);
         transform.Rotate(Vector3.forward, Random.Range(-180, 180));
     }
 
@@ -52,7 +50,7 @@ public class MP1_ItemBody : MP1_PhysicalForm
 
 public class MP1_ItemData : MP1_Data
 {
-    public Items itemType;
+    public Items itemType { get; private set; }
     public float capacity;
     private ItemStates _state;
     private SCG_RigidBodySerialized _rigidBody;
@@ -86,10 +84,14 @@ public class MP1_ItemData : MP1_Data
             _rigidBody = new SCG_RigidBodySerialized(50, 2, 2, true, false, RigidbodyInterpolation.Interpolate, CollisionDetectionMode.ContinuousDynamic, RigidbodyConstraints.FreezePositionZ);
         }
 
-        MP1_ServiceLocator.instance.ItemsManager.Register(this);
+        if (MP1_ServiceLocator.instance.ObjectInteractionsManager.RequestToRegister(this))
+            MP1_ServiceLocator.instance.ObjectInteractionsManager.Register(this);
+        else
+            Debug.Log("ERROR: Attempting to register registered data");
     }
 
     #region Info Methods
+
     public bool IfCarryable()
     {
         return _carryable;
@@ -104,6 +106,7 @@ public class MP1_ItemData : MP1_Data
     {
         return _state;
     }
+   
     #endregion
 
     #region Internal Functions
@@ -134,13 +137,18 @@ public class MP1_ItemData : MP1_Data
 
     #endregion
     
-    
+    #region Body Functions
+
     // Called by MP1_Item if and only if a loose item at start of level.
     public void LooseInit(Vector3 where, MP1_ItemBody looseObject)
     {
         _state = ItemStates.Free;
         _MakeALooseBody(where, looseObject);
     }
+
+    #endregion
+
+    #region Item Manager Functions
 
     // Called by MP1_ItemManager
     public void MakeHeld()
@@ -167,6 +175,8 @@ public class MP1_ItemData : MP1_Data
         _MakeABody(where);
         _Launch(direction, launchImpulse);
     }
+
+    #endregion
 }
 
 public enum ItemStates { Free, Held, Staged }

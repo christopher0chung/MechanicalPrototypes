@@ -42,15 +42,15 @@ public class MP1_ServiceLocator {
         }
     }
 
-    private MP1_ItemsManager _im;
-    public MP1_ItemsManager ItemsManager
+    private MP1_ObjectInteractionsManager _oim;
+    public MP1_ObjectInteractionsManager ObjectInteractionsManager
     {
         get
         {
-            if (_im == null)
-                return _im = new MP1_ItemsManager();
+            if (_oim == null)
+                return _oim = new MP1_ObjectInteractionsManager();
             else
-                return _im;
+                return _oim;
         }
     }
 

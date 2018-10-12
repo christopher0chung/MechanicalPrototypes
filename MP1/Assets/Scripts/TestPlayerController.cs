@@ -38,8 +38,8 @@ public class TestPlayerController : MonoBehaviour {
     private MP1_PlayerAirSystem _air;
     private MP1_PlayerExhaustionSystem _exh;
 
-    private MP1_ItemData _h;
-    private MP1_ItemData _heldItem
+    private MP1_Data _h;
+    private MP1_Data _heldItem
     {
         get { return _h; }
         set
@@ -51,7 +51,18 @@ public class TestPlayerController : MonoBehaviour {
                 if (_h == null)
                     _showGrabbedItems.ShowHeld(null);
                 else
-                    _showGrabbedItems.ShowHeld(_h.itemType.ToString());
+                {
+                    if (_h.GetType() == typeof(MP1_ItemData))
+                    {
+                        MP1_ItemData i = (MP1_ItemData)_h;
+                        _showGrabbedItems.ShowHeld(i.itemType.ToString());
+                    }
+                    else if (_h.GetType() == typeof(MP1_EquipmentData))
+                    {
+                        MP1_EquipmentData e = (MP1_EquipmentData)_h;
+                        _showGrabbedItems.ShowHeld(e.equipmentType.ToString());
+                    }
+                }
             }
         }
     }
@@ -94,7 +105,7 @@ public class TestPlayerController : MonoBehaviour {
         _air = GetComponent<MP1_PlayerAirSystem>();
         _exh = GetComponent<MP1_PlayerExhaustionSystem>();
 
-        MP1_ServiceLocator.instance.ItemsManager.RegisterPlayerControllers(this);
+        MP1_ServiceLocator.instance.ObjectInteractionsManager.RegisterPlayerControllers(this);
     }
 
     private void _SetThrustVector()
@@ -151,15 +162,25 @@ public class TestPlayerController : MonoBehaviour {
         if (Input.GetKey(KeyCode.I))
             headLamp.Rotate(Vector3.right, 90 * Time.deltaTime);
 
-        MP1_ServiceLocator.instance.ItemsManager.PlayerInteractSelect(ID, headLamp.position, headLamp.forward);
+        MP1_ServiceLocator.instance.ObjectInteractionsManager.PlayerInteractSelect(ID, headLamp.position, headLamp.forward);
+    }
+
+    private void _AdjustButDontSetHeadLampAngle()
+    {
+        if (Input.GetKey(KeyCode.U))
+            headLamp.Rotate(Vector3.right, -90 * Time.deltaTime);
+        if (Input.GetKey(KeyCode.I))
+            headLamp.Rotate(Vector3.right, 90 * Time.deltaTime);
+
+        MP1_ServiceLocator.instance.ObjectInteractionsManager.PlayerInteractDisable(ID);
     }
 
     #endregion
 
     #region Pseudo-Callbacks
-    public void GrabCallback(MP1_ItemData i)
+    public void GrabCallback(MP1_Data d)
     {
-        _heldItem = i;
+        _heldItem = d;
     }
 
     public void ReleaseCallback()
@@ -210,42 +231,15 @@ public class TestPlayerController : MonoBehaviour {
         }
         public override void Update()
         {
+            Context._SetHeadLampAngle();
+
             if (MP1_ServiceLocator.instance.InputBuffer.KeyDown(Context.GetType(), KeyCode.J))
             {
-                if (MP1_ServiceLocator.instance.ItemsManager.RequestToMuscle(Context.ID))
+                if (MP1_ServiceLocator.instance.ObjectInteractionsManager.RequestToMuscle(Context.ID))
                 {
-                    MP1_ServiceLocator.instance.ItemsManager.Muscle(Context.ID);
+                    MP1_ServiceLocator.instance.ObjectInteractionsManager.Muscle(Context.ID);
                     TransitionTo<A_State_Grab>();
                 }
-
-                //if (Context._dir == LastFacingDirection.Left)
-                //{
-                //    cols = Physics.OverlapBox(Context.transform.position - 
-                //        Vector3.right * Context._grabOffset.localPosition.z + 
-                //        Vector3.up, grabAreaDimensions);
-                //    //Debug.Log(cols.Length);
-                //}
-                //else
-                //{
-                //    cols = Physics.OverlapBox(Context.transform.position + 
-                //        Vector3.right * Context._grabOffset.localPosition.z + 
-                //        Vector3.up, grabAreaDimensions);
-                //}
-                //if (cols.Length > 0)
-                //{
-                //    //Debug.Log(cols.Length);
-                //    for (int i = 0; i < cols.Length; i++)
-                //    {
-                //        if (cols[i].transform.root.gameObject.GetComponent<MP1_Item>())
-                //        {
-                //            //Debug.Log("MP1_Item found");
-                //            //Context.grabbable = cols[i].gameObject;
-                //            MP1_ServiceLocator.instance.ItemsManager.RequestToHoldItem(cols[i].transform.root.gameObject.GetComponent<MP1_Item>().data as ItemData, Context, Context.g);
-                //            TransitionTo<A_State_Grab>();
-                //            //Debug.Log("Going to grab");
-                //        }
-                //    }
-                //}
             }
         }
     }
@@ -253,17 +247,30 @@ public class TestPlayerController : MonoBehaviour {
     public class A_State_Grab : A_State_Base
     {
         SCG_RigidBodySerialized rb;
+        private float _mass;
 
         public override void OnEnter()
         {
             base.OnEnter();
 
-            Context._rigidBody.mass += Context._heldItem.GetSerializedRigidbody().mass;
+            if (Context._heldItem.GetType() == typeof(MP1_ItemData))
+            {
+                MP1_ItemData i = (MP1_ItemData)Context._heldItem;
+                _mass = i.GetSerializedRigidbody().mass;
+            }
+            else if (Context._heldItem.GetType() == typeof(MP1_EquipmentData))
+            {
+                MP1_EquipmentData e = (MP1_EquipmentData)Context._heldItem;
+                _mass = e.GetSerializedRigidbody().mass;
+            }
+
+            Context._rigidBody.mass += _mass;
         }
 
         public override void Update()
         {
-            //Debug.Log(MP1_ServiceLocator.instance.InputBuffer.KeyRate(this.GetType(), KeyCode.J));
+            Context._AdjustButDontSetHeadLampAngle();
+
             if (Context._fsm_Movement.CurrentState.ToString() == typeof(M_State_Boost).ToString() ||
                 Context._fsm_Movement.CurrentState.ToString() == typeof(M_State_Walk).ToString())
             {
@@ -274,33 +281,23 @@ public class TestPlayerController : MonoBehaviour {
                     TransitionTo<A_State_GrabRecovery>();
                 }
             }
-
         }
 
         public override void OnExit()
         {
-            Context._rigidBody.mass -= Context._heldItem.GetSerializedRigidbody().mass;
-            MP1_ServiceLocator.instance.ItemsManager.RequestToReleaseItem(Context._heldItem, Context,Context._dir);
-            //base.OnExit();
-            //Context.grabbable.transform.SetParent(null);
+            if (Context._heldItem.GetType() == typeof(MP1_ItemData))
+            {
+                MP1_ItemData i = (MP1_ItemData)Context._heldItem;
+                _mass = i.GetSerializedRigidbody().mass;
+            }
+            else if (Context._heldItem.GetType() == typeof(MP1_EquipmentData))
+            {
+                MP1_EquipmentData e = (MP1_EquipmentData)Context._heldItem;
+                _mass = e.GetSerializedRigidbody().mass;
+            }
 
-            //rb.RestoreRigidbody(Context.grabbable.AddComponent<Rigidbody>());
-            //Context._rigidBody.mass -= rb.mass;
-
-            //if (Context._dir == LastFacingDirection.Left)
-            //{
-            //    Context.grabbable.transform.position = 
-            //        Context.transform.position + 
-            //        Vector3.up * Context._grabOffset.transform.localPosition.y -
-            //        Vector3.right * Context._grabOffset.transform.localPosition.z;
-            //}
-            //else
-            //{
-            //    Context.grabbable.transform.position =
-            //        Context.transform.position +
-            //        Vector3.up * Context._grabOffset.transform.localPosition.y +
-            //        Vector3.right * Context._grabOffset.transform.localPosition.z;
-            //}
+            Context._rigidBody.mass -= _mass;
+            MP1_ServiceLocator.instance.ObjectInteractionsManager.RequestToReleaseItem(Context._heldItem, Context, Context._dir);
         }
     }
 
@@ -316,6 +313,9 @@ public class TestPlayerController : MonoBehaviour {
         public override void Update()
         {
             base.Update();
+
+            Context._AdjustButDontSetHeadLampAngle();
+
             recoverTimer += Time.deltaTime;
             if (recoverTimer >= .7f)
                 TransitionTo<A_State_NoInteraction>();
@@ -339,7 +339,6 @@ public class TestPlayerController : MonoBehaviour {
             base.Update();
             Context._SetThrustVector();
             Context._SetModelTempAnim();
-            Context._SetHeadLampAngle();
         }
     }
 
@@ -349,7 +348,6 @@ public class TestPlayerController : MonoBehaviour {
         {
             base.Update();
             Context._SetModelTempAnim();
-            Context._SetHeadLampAngle();
         }
     }
 
