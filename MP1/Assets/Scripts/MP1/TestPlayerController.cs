@@ -28,9 +28,15 @@ public class TestPlayerController : MonoBehaviour {
             {
                 __mov = value;
                 if (__mov == MovementStates.Move)
+                {
                     _fsm_Movement.TransitionTo<M_State_Boost>();
+                    _fsm_Actions.TransitionTo<A_State_NoInteraction>();
+                }
                 else if (__mov == MovementStates.Static)
+                {
                     _fsm_Movement.TransitionTo<M_State_Static>();
+                    _fsm_Actions.TransitionTo<A_State_InMenu>();
+                }
             }
         }
     }
@@ -78,10 +84,8 @@ public class TestPlayerController : MonoBehaviour {
 	}
 	
 	void Update () {
-
         _fsm_Movement.Update();
         _fsm_Actions.Update();
-
     }
 
     void FixedUpdate()
@@ -177,7 +181,7 @@ public class TestPlayerController : MonoBehaviour {
 
     #endregion
 
-    #region Pseudo-Callbacks
+    #region Public Functions
     public void GrabCallback(MP1_Data d)
     {
         _heldItem = d;
@@ -192,9 +196,6 @@ public class TestPlayerController : MonoBehaviour {
     {
         _heldItem = null;
     }
-    #endregion
-
-    #region Public Functions
 
     public void SetGrabOffset(Transform grab)
     {
@@ -209,6 +210,14 @@ public class TestPlayerController : MonoBehaviour {
     public void SetShowGrabbedItems(ShowGrabbedItems s)
     {
         _showGrabbedItems = s;
+    }
+
+    public void SetMove (MovementStates MState)
+    {
+        if (MState == MovementStates.Move)
+            _mov = MovementStates.Move;
+        else
+            _mov = MovementStates.Static;
     }
 
     #endregion
@@ -323,6 +332,11 @@ public class TestPlayerController : MonoBehaviour {
     }
 
     public class A_State_StaticActionOverTime : A_State_Base
+    {
+
+    }
+
+    public class A_State_InMenu : A_State_Base
     {
 
     }
