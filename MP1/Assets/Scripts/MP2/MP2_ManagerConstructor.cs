@@ -19,6 +19,8 @@ public class MP2_ManagerConstructor : MonoBehaviour {
         _p0_Constructables.Add(managersGO.AddComponent<MP2_InputRouteProcessor>());
         _p1_Constructables.Add(managersGO.AddComponent<MP2_InputRouteProcessor>());
 
+        //Debug.Log(_p0_Constructables.Count + " " + _p1_Constructables.Count);
+
         foreach (MP2_IConstructable c in _p0_Constructables)
             c.CalledAwake(Enum_MP2_ID.Player0);
 

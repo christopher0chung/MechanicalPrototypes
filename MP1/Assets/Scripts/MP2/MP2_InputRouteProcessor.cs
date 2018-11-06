@@ -5,10 +5,12 @@ using UnityEngine;
 public class MP2_InputRouteProcessor : MonoBehaviour, MP2_IConstructable {
 
     private SCG_EventManager _eventManager;
+
+    private MP2_CharacterMovementController _charMove;
+    private MP2_CharacterInteractionController _charInt;
+    
     //---------------------
     // private OpMenuController OpMenu
-    // private CharacterMovementController CharMove
-    // private CharacterInteractionController CharInt
     // private StationController Stn
     //---------------------
 
@@ -27,6 +29,7 @@ public class MP2_InputRouteProcessor : MonoBehaviour, MP2_IConstructable {
     }
 
 	public void CalledStart () {
+        //Debug.Log(this.name.ToString() + " for id number " + _thisID + " was called");
         _fsm = new SCG_FSM<MP2_InputRouteProcessor>(this);
         _fsm.TransitionTo<State_CharacterControl>();
 
@@ -34,21 +37,38 @@ public class MP2_InputRouteProcessor : MonoBehaviour, MP2_IConstructable {
 	}
 	
 	void Update () {
+        //Debug.Log(this.name.ToString() + " for id number " + _thisID + " is in Update");
+
         _fsm.Update();
 	}
 
     #region Internal Functions
-    MP2_CharacterMovementController c;
+    private List<MP2_IConstructable> _myID_Constructables;
 
     private void _MakeAndReferenceControllers()
     {
-        c = GameObject.Find("Managers").AddComponent<MP2_CharacterMovementController>();
-        c.CalledAwake(_thisID);
+        GameObject managersGO = GameObject.Find("Managers");
+
+        _myID_Constructables = new List<MP2_IConstructable>();
+
+        _charMove = managersGO.AddComponent<MP2_CharacterMovementController>();
+        _myID_Constructables.Add(_charMove);
+
+        _charInt = managersGO.AddComponent<MP2_CharacterInteractionController>();
+        _myID_Constructables.Add(_charInt);
+
+        _myID_Constructables.Add(managersGO.AddComponent<MP2_OpMenuController>());
+        _myID_Constructables.Add(managersGO.AddComponent<MP2_StationController>());
+
+
+        foreach (MP2_IConstructable c in _myID_Constructables)
+            c.CalledAwake(_thisID);
     }
 
     private void _ControllerCreationFollowup()
     {
-        c.CalledStart();
+        foreach (MP2_IConstructable c in _myID_Constructables)
+            c.CalledStart();
     }
     #endregion
 
@@ -73,7 +93,11 @@ public class MP2_InputRouteProcessor : MonoBehaviour, MP2_IConstructable {
     #endregion
 
     #region Control States
-    public class State_CharacterControl : SCG_FSM<MP2_InputRouteProcessor>.State
+    public class State_Base : SCG_FSM<MP2_InputRouteProcessor>.State
+    {
+
+    }
+    public class State_CharacterControl : State_Base
     {
         public override void OnEnter()
         {
@@ -92,7 +116,7 @@ public class MP2_InputRouteProcessor : MonoBehaviour, MP2_IConstructable {
 
     }
 
-    public class State_MenuControl : SCG_FSM<MP2_InputRouteProcessor>.State
+    public class State_MenuControl : State_Base
     {
         public override void OnEnter()
         {
@@ -111,7 +135,7 @@ public class MP2_InputRouteProcessor : MonoBehaviour, MP2_IConstructable {
 
     }
 
-    public class State_StationControl : SCG_FSM<MP2_InputRouteProcessor>.State
+    public class State_StationControl : State_Base
     {
         public override void OnEnter()
         {

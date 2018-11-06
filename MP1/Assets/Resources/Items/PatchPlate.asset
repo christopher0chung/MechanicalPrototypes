@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22377e62682dce24381a02d98ef3f71d, type: 3}
+  m_Name: PatchPlate
+  m_EditorClassIdentifier: 
+  currentState: 0
+  type: 2
+  percent: 100
+  gOPrefab: {fileID: 1277613386638410, guid: 1d8c5043738798f4cb4505fe1ce5bac7, type: 2}

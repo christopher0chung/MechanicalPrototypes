@@ -79,7 +79,7 @@ public class MP1_ObjectInteractionsManager {
 
     RaycastHit info;
     Ray interactionRay;
-    // Bitshifted to raycast only UserLayer 8 which should be "Interactables"
+    // Bitshifted to raycast only UserLayer 9 which should be "Interactables"
     LayerMask lm = 1 << 9;
 
     public void PlayerInteractSelect(PlayerID ID, Vector3 lookOrigin, Vector3 lookDirection)

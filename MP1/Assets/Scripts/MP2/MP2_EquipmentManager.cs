@@ -16,5 +16,7 @@ public class MP2_EquipmentManager {
     public void CalledAwake()
     {
         _managedEquipment.Clear();
+
+        MP2_ServiceLocator.instance.EventManager.Fire(new E_EqptManagerConstructed());
     }
 }

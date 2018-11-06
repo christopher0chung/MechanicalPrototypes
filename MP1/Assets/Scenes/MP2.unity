@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 11103396}
   - component: {fileID: 11103395}
   - component: {fileID: 11103397}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spot Light (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,46 +193,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zAnchor: 9
   zWaveMag: 15
---- !u!1 &17058762
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 17058764}
-  - component: {fileID: 17058763}
-  m_Layer: 0
-  m_Name: MVC_ModelsAndControllers
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &17058763
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 17058762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46684fe08d7077e4dba9bf8ccdbdfa11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &17058764
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 17058762}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &21669843
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,7 +367,7 @@ Transform:
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &73003433
 GameObject:
@@ -419,7 +379,7 @@ GameObject:
   - component: {fileID: 73003434}
   - component: {fileID: 73003436}
   - component: {fileID: 73003435}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Particle System (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5505,7 +5465,7 @@ GameObject:
   - component: {fileID: 77580627}
   - component: {fileID: 77580629}
   - component: {fileID: 77580628}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Teeth_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5580,7 +5540,7 @@ GameObject:
   - component: {fileID: 81710234}
   - component: {fileID: 81710233}
   - component: {fileID: 81710235}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spot Light (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5743,7 +5703,7 @@ RectTransform:
   - {fileID: 21669844}
   - {fileID: 742925434}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5760,7 +5720,7 @@ GameObject:
   - component: {fileID: 105862971}
   - component: {fileID: 105862970}
   - component: {fileID: 105862972}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spot Light (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5929,7 +5889,7 @@ Transform:
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &121182430
 GameObject:
@@ -5942,7 +5902,7 @@ GameObject:
   - component: {fileID: 121182431}
   - component: {fileID: 121182433}
   - component: {fileID: 121182432}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Eye_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6066,6 +6026,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: db3214b345e7f924e82453f3dc3b39f8, type: 2}
+    - target: {fileID: 100000, guid: 30d37e7383c18534fbd35bd4bd038a58, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30d37e7383c18534fbd35bd4bd038a58, type: 3}
   m_IsPrefabAsset: 0
@@ -6149,7 +6113,7 @@ GameObject:
   - component: {fileID: 163389808}
   - component: {fileID: 163389810}
   - component: {fileID: 163389809}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Teeth_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6224,7 +6188,7 @@ GameObject:
   - component: {fileID: 163732974}
   - component: {fileID: 163732973}
   - component: {fileID: 163732972}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spot Light (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6306,7 +6270,7 @@ GameObject:
   - component: {fileID: 166055217}
   - component: {fileID: 166055216}
   - component: {fileID: 166055215}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Realistic_White_Male_Low_Poly (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6461,7 +6425,7 @@ GameObject:
   - component: {fileID: 173351025}
   - component: {fileID: 173351027}
   - component: {fileID: 173351026}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Eye_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6538,7 +6502,7 @@ GameObject:
   - component: {fileID: 176837898}
   - component: {fileID: 176837897}
   - component: {fileID: 176837896}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Realistic_White_Male_Low_Poly (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6628,7 +6592,7 @@ GameObject:
   - component: {fileID: 180932809}
   - component: {fileID: 180932808}
   - component: {fileID: 180932807}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spot Light (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6710,7 +6674,7 @@ GameObject:
   - component: {fileID: 191799062}
   - component: {fileID: 191799061}
   - component: {fileID: 191799060}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Realistic_White_Male_Low_Poly (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6800,7 +6764,7 @@ GameObject:
   - component: {fileID: 223889652}
   - component: {fileID: 223889651}
   - component: {fileID: 223889650}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Realistic_White_Male_Low_Poly (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6880,6 +6844,57 @@ Transform:
   m_Father: {fileID: 264270581}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &224650276
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.13052624
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.9914449
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_RootOrder
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 114381964543872880, guid: 75ba10b8fbddf644898c7e3131163627,
+        type: 2}
+      propertyPath: makeNewLooseItem
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882317005284920, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_Name
+      value: LooseItem (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &237864534
 GameObject:
   m_ObjectHideFlags: 0
@@ -6892,7 +6907,7 @@ GameObject:
   - component: {fileID: 237864538}
   - component: {fileID: 237864537}
   - component: {fileID: 237864536}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Realistic_White_Male_Low_Poly (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6978,7 +6993,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 264270581}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ForegroundPeople
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7016,7 +7031,7 @@ GameObject:
   - component: {fileID: 299103058}
   - component: {fileID: 299103060}
   - component: {fileID: 299103059}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Teeth_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7093,7 +7108,7 @@ GameObject:
   - component: {fileID: 322229223}
   - component: {fileID: 322229222}
   - component: {fileID: 322229221}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Realistic_White_Male_Low_Poly (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7185,7 +7200,7 @@ GameObject:
   - component: {fileID: 330144579}
   - component: {fileID: 330144578}
   - component: {fileID: 330144577}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Realistic_White_Male_Low_Poly (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7274,7 +7289,7 @@ GameObject:
   - component: {fileID: 346778115}
   - component: {fileID: 346778117}
   - component: {fileID: 346778116}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Teeth_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7399,7 +7414,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &364040584
 GameObject:
@@ -12031,7 +12046,7 @@ Transform:
   m_Children:
   - {fileID: 548321316}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &374467951
 GameObject:
@@ -12176,7 +12191,7 @@ GameObject:
   - component: {fileID: 377922970}
   - component: {fileID: 377922969}
   - component: {fileID: 377922971}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12246,6 +12261,57 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zAnchor: 9
   zWaveMag: 15
+--- !u!1001 &383343617
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -26.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.13052624
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.9914449
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_RootOrder
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 114381964543872880, guid: 75ba10b8fbddf644898c7e3131163627,
+        type: 2}
+      propertyPath: makeNewLooseItem
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882317005284920, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_Name
+      value: LooseItem (4)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &385938093
 GameObject:
   m_ObjectHideFlags: 0
@@ -12256,7 +12322,7 @@ GameObject:
   - component: {fileID: 385938096}
   - component: {fileID: 385938095}
   - component: {fileID: 385938094}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spot Light (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12337,7 +12403,7 @@ GameObject:
   - component: {fileID: 387562945}
   - component: {fileID: 387562947}
   - component: {fileID: 387562946}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Teeth_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12402,6 +12468,49 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 387562944}
   m_Mesh: {fileID: 4300006, guid: d6fc395e7565a594f9ceea7172703744, type: 3}
+--- !u!1 &396662032
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 396662034}
+  - component: {fileID: 396662033}
+  m_Layer: 0
+  m_Name: One
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &396662033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 396662032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0492f0f4d8cdb3b4788ecccc8c2c170c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemReference: {fileID: 11400000, guid: 746c93a94ff98204490ac7c8d26a65db, type: 2}
+  startingPercent: 0
+  otherOne: {fileID: 1548705380}
+--- !u!4 &396662034
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 396662032}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.5264238, y: -30.160002, z: 0.0058565736}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &402590938
 GameObject:
   m_ObjectHideFlags: 0
@@ -12412,7 +12521,7 @@ GameObject:
   - component: {fileID: 402590940}
   - component: {fileID: 402590939}
   - component: {fileID: 402590941}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Point Light (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12546,7 +12655,7 @@ GameObject:
   - component: {fileID: 451697342}
   - component: {fileID: 451697344}
   - component: {fileID: 451697343}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Eye_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12623,7 +12732,7 @@ GameObject:
   - component: {fileID: 459790924}
   - component: {fileID: 459790923}
   - component: {fileID: 459790922}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Realistic_White_Male_Low_Poly (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12711,7 +12820,7 @@ GameObject:
   - component: {fileID: 465101528}
   - component: {fileID: 465101530}
   - component: {fileID: 465101529}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Particle System (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17796,7 +17905,7 @@ GameObject:
   - component: {fileID: 473032332}
   - component: {fileID: 473032334}
   - component: {fileID: 473032333}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Particle System (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22881,7 +22990,7 @@ GameObject:
   - component: {fileID: 473777625}
   - component: {fileID: 473777624}
   - component: {fileID: 473777623}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spot Light (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22961,7 +23070,7 @@ GameObject:
   - component: {fileID: 479565622}
   - component: {fileID: 479565624}
   - component: {fileID: 479565623}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Particle System (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33132,7 +33241,7 @@ GameObject:
   - component: {fileID: 494893073}
   - component: {fileID: 494893075}
   - component: {fileID: 494893074}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Eye_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33208,7 +33317,7 @@ GameObject:
   - component: {fileID: 509332921}
   - component: {fileID: 509332923}
   - component: {fileID: 509332922}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Eye_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33273,6 +33382,62 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 509332920}
   m_Mesh: {fileID: 4300004, guid: d6fc395e7565a594f9ceea7172703744, type: 3}
+--- !u!1001 &521960400
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -27.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.13052624
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.9914449
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_RootOrder
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 114381964543872880, guid: 75ba10b8fbddf644898c7e3131163627,
+        type: 2}
+      propertyPath: makeNewLooseItem
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882317005284920, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_Name
+      value: LooseItem (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114381964543872880, guid: 75ba10b8fbddf644898c7e3131163627,
+        type: 2}
+      propertyPath: newItemType
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &523486198
 GameObject:
   m_ObjectHideFlags: 0
@@ -33285,7 +33450,7 @@ GameObject:
   - component: {fileID: 523486202}
   - component: {fileID: 523486201}
   - component: {fileID: 523486200}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Realistic_White_Male_Low_Poly (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33374,7 +33539,7 @@ GameObject:
   - component: {fileID: 523870976}
   - component: {fileID: 523870978}
   - component: {fileID: 523870977}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Eye_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33449,7 +33614,7 @@ GameObject:
   - component: {fileID: 529785754}
   - component: {fileID: 529785753}
   - component: {fileID: 529785755}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spot Light (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33519,6 +33684,62 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zAnchor: 9
   zWaveMag: 15
+--- !u!1001 &530144699
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -5.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.13052624
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.9914449
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_RootOrder
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 114381964543872880, guid: 75ba10b8fbddf644898c7e3131163627,
+        type: 2}
+      propertyPath: makeNewLooseItem
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882317005284920, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_Name
+      value: LooseItem (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114381964543872880, guid: 75ba10b8fbddf644898c7e3131163627,
+        type: 2}
+      propertyPath: newItemType
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &530523717
 GameObject:
   m_ObjectHideFlags: 0
@@ -33531,7 +33752,7 @@ GameObject:
   - component: {fileID: 530523721}
   - component: {fileID: 530523720}
   - component: {fileID: 530523719}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Realistic_White_Male_Low_Poly (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33620,7 +33841,7 @@ GameObject:
   - component: {fileID: 537304322}
   - component: {fileID: 537304324}
   - component: {fileID: 537304323}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Eye_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33695,7 +33916,7 @@ GameObject:
   - component: {fileID: 547713665}
   - component: {fileID: 547713664}
   - component: {fileID: 547713663}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spot Light (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38404,7 +38625,7 @@ GameObject:
   - component: {fileID: 597691584}
   - component: {fileID: 597691583}
   - component: {fileID: 597691582}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spot Light (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38485,7 +38706,7 @@ GameObject:
   - component: {fileID: 600009775}
   - component: {fileID: 600009777}
   - component: {fileID: 600009776}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Teeth_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38566,7 +38787,7 @@ GameObject:
   - component: {fileID: 609786047}
   - component: {fileID: 609786049}
   - component: {fileID: 609786048}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Teeth_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38631,6 +38852,57 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 609786046}
   m_Mesh: {fileID: 4300006, guid: d6fc395e7565a594f9ceea7172703744, type: 3}
+--- !u!1001 &621301108
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -5.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -28.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.13052624
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.9914449
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_RootOrder
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 114381964543872880, guid: 75ba10b8fbddf644898c7e3131163627,
+        type: 2}
+      propertyPath: makeNewLooseItem
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882317005284920, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_Name
+      value: LooseItem (6)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &650171104
 GameObject:
   m_ObjectHideFlags: 0
@@ -38642,7 +38914,7 @@ GameObject:
   - component: {fileID: 650171105}
   - component: {fileID: 650171107}
   - component: {fileID: 650171106}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Eye_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38718,7 +38990,7 @@ GameObject:
   - component: {fileID: 670108080}
   - component: {fileID: 670108082}
   - component: {fileID: 670108081}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Teeth_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38794,7 +39066,7 @@ GameObject:
   - component: {fileID: 677011253}
   - component: {fileID: 677011255}
   - component: {fileID: 677011254}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Teeth_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43942,7 +44214,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &715423114
 GameObject:
@@ -43954,7 +44226,7 @@ GameObject:
   - component: {fileID: 715423117}
   - component: {fileID: 715423116}
   - component: {fileID: 715423115}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spot Light (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44150,7 +44422,7 @@ GameObject:
   - component: {fileID: 745927620}
   - component: {fileID: 745927622}
   - component: {fileID: 745927621}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Teeth_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44547,7 +44819,7 @@ GameObject:
   - component: {fileID: 758106215}
   - component: {fileID: 758106217}
   - component: {fileID: 758106216}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Eye_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44623,7 +44895,7 @@ GameObject:
   - component: {fileID: 769156414}
   - component: {fileID: 769156416}
   - component: {fileID: 769156415}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Eye_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44700,7 +44972,7 @@ GameObject:
   - component: {fileID: 781589817}
   - component: {fileID: 781589816}
   - component: {fileID: 781589815}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Realistic_White_Male_Low_Poly (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44788,7 +45060,7 @@ GameObject:
   - component: {fileID: 782298177}
   - component: {fileID: 782298176}
   - component: {fileID: 782298175}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spot Light (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44870,7 +45142,7 @@ GameObject:
   - component: {fileID: 784981361}
   - component: {fileID: 784981360}
   - component: {fileID: 784981359}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Realistic_White_Male_Low_Poly (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44960,7 +45232,7 @@ GameObject:
   - component: {fileID: 799391675}
   - component: {fileID: 799391674}
   - component: {fileID: 799391676}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Point Light (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45095,7 +45367,7 @@ GameObject:
   - component: {fileID: 810778072}
   - component: {fileID: 810778071}
   - component: {fileID: 810778070}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Realistic_White_Male_Low_Poly (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45191,7 +45463,7 @@ GameObject:
   - component: {fileID: 851848300}
   - component: {fileID: 851848302}
   - component: {fileID: 851848301}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Teeth_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45358,7 +45630,7 @@ GameObject:
   - component: {fileID: 866973772}
   - component: {fileID: 866973771}
   - component: {fileID: 866973770}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Realistic_White_Male_Low_Poly (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45453,7 +45725,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &888654653
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -45522,7 +45794,7 @@ Transform:
   m_Children:
   - {fileID: 860136458}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &903362478 stripped
 GameObject:
@@ -45642,7 +45914,7 @@ Transform:
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &921911972
 GameObject:
@@ -45655,7 +45927,7 @@ GameObject:
   - component: {fileID: 921911973}
   - component: {fileID: 921911975}
   - component: {fileID: 921911974}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Eye_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45730,7 +46002,7 @@ GameObject:
   - component: {fileID: 940713409}
   - component: {fileID: 940713408}
   - component: {fileID: 940713410}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Point Light (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45864,7 +46136,7 @@ GameObject:
   - component: {fileID: 950078581}
   - component: {fileID: 950078583}
   - component: {fileID: 950078582}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Eye_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45940,7 +46212,7 @@ GameObject:
   - component: {fileID: 988570109}
   - component: {fileID: 988570111}
   - component: {fileID: 988570110}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Eye_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46015,7 +46287,7 @@ GameObject:
   - component: {fileID: 1018851727}
   - component: {fileID: 1018851726}
   - component: {fileID: 1018851728}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Point Light (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46137,7 +46409,7 @@ MonoBehaviour:
   FogTransitionSize: 5
   MaxLightDistance: 128
   AboveFogPercent: 0.1
-  Offset: {x: 2384.832, y: 2384.832, z: 0}
+  Offset: {x: 2504.4583, y: 2504.4583, z: 0}
 --- !u!1 &1049285657
 GameObject:
   m_ObjectHideFlags: 0
@@ -46146,7 +46418,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1049285658}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BackgroundPeople
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46194,7 +46466,7 @@ GameObject:
   - component: {fileID: 1054890401}
   - component: {fileID: 1054890400}
   - component: {fileID: 1054890402}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Point Light (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46328,7 +46600,7 @@ GameObject:
   - component: {fileID: 1058282562}
   - component: {fileID: 1058282564}
   - component: {fileID: 1058282563}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Teeth_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46492,7 +46764,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1076571351
 GameObject:
@@ -46505,7 +46777,7 @@ GameObject:
   - component: {fileID: 1076571352}
   - component: {fileID: 1076571354}
   - component: {fileID: 1076571353}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Teeth_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51204,7 +51476,7 @@ GameObject:
   - component: {fileID: 1126392664}
   - component: {fileID: 1126392663}
   - component: {fileID: 1126392662}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Realistic_White_Male_Low_Poly (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51457,7 +51729,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1170275189
 GameObject:
@@ -51469,7 +51741,7 @@ GameObject:
   - component: {fileID: 1170275192}
   - component: {fileID: 1170275191}
   - component: {fileID: 1170275190}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spot Light (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56159,7 +56431,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1176448100
 GameObject:
@@ -56172,7 +56444,7 @@ GameObject:
   - component: {fileID: 1176448101}
   - component: {fileID: 1176448103}
   - component: {fileID: 1176448102}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Teeth_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56248,7 +56520,7 @@ GameObject:
   - component: {fileID: 1196567176}
   - component: {fileID: 1196567178}
   - component: {fileID: 1196567177}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Teeth_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56323,7 +56595,7 @@ GameObject:
   - component: {fileID: 1215857183}
   - component: {fileID: 1215857182}
   - component: {fileID: 1215857184}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Point Light (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56445,7 +56717,7 @@ MonoBehaviour:
   FogTransitionSize: 5
   MaxLightDistance: 128
   AboveFogPercent: 0.1
-  Offset: {x: 2384.28, y: 2384.28, z: 0}
+  Offset: {x: 2503.9062, y: 2503.9062, z: 0}
 --- !u!1 &1217976804
 GameObject:
   m_ObjectHideFlags: 0
@@ -56458,7 +56730,7 @@ GameObject:
   - component: {fileID: 1217976807}
   - component: {fileID: 1217976806}
   - component: {fileID: 1217976805}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Realistic_White_Male_Low_Poly (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56550,7 +56822,7 @@ GameObject:
   - component: {fileID: 1220100666}
   - component: {fileID: 1220100665}
   - component: {fileID: 1220100664}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Realistic_White_Male_Low_Poly (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56628,85 +56900,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1220100662}
   m_Mesh: {fileID: 4300002, guid: d6fc395e7565a594f9ceea7172703744, type: 3}
---- !u!1 &1235632392
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1235632394}
-  - component: {fileID: 1235632393}
-  - component: {fileID: 1235632395}
-  m_Layer: 0
-  m_Name: Point Light (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!108 &1235632393
-Light:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1235632392}
-  m_Enabled: 1
-  serializedVersion: 8
-  m_Type: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
-  m_Range: 500
-  m_SpotAngle: 20
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 1
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 1
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_Lightmapping: 1
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
---- !u!4 &1235632394
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1235632392}
-  m_LocalRotation: {x: 0.66643304, y: 0.19617492, z: 0.17584439, w: 0.69746774}
-  m_LocalPosition: {x: -36.53828, y: 44.37807, z: 2.3618484}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1426515454}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 59.388004, y: 86.08501, z: 84.37701}
---- !u!114 &1235632395
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1235632392}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78cb9678f4195fc4089b94cca0ed9440, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tgt: {fileID: 2063625672}
 --- !u!1 &1237968813
 GameObject:
   m_ObjectHideFlags: 0
@@ -56717,7 +56910,7 @@ GameObject:
   - component: {fileID: 1237968815}
   - component: {fileID: 1237968814}
   - component: {fileID: 1237968816}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Point Light (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56840,6 +57033,53 @@ MonoBehaviour:
   MaxLightDistance: 128
   AboveFogPercent: 0.1
   Offset: {x: 0.5403508, y: 0.5403508, z: 0}
+--- !u!1001 &1238685040
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -23.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.13052624
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.9914449
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 114381964543872880, guid: 75ba10b8fbddf644898c7e3131163627,
+        type: 2}
+      propertyPath: makeNewLooseItem
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1250572052
 GameObject:
   m_ObjectHideFlags: 0
@@ -56851,7 +57091,7 @@ GameObject:
   - component: {fileID: 1250572053}
   - component: {fileID: 1250572055}
   - component: {fileID: 1250572054}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Teeth_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56927,7 +57167,7 @@ GameObject:
   - component: {fileID: 1277684066}
   - component: {fileID: 1277684068}
   - component: {fileID: 1277684067}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Teeth_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56992,6 +57232,62 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1277684065}
   m_Mesh: {fileID: 4300006, guid: d6fc395e7565a594f9ceea7172703744, type: 3}
+--- !u!1001 &1277941875
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -28.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.13052624
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.9914449
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_RootOrder
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114381964543872880, guid: 75ba10b8fbddf644898c7e3131163627,
+        type: 2}
+      propertyPath: makeNewLooseItem
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882317005284920, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_Name
+      value: LooseItem (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114381964543872880, guid: 75ba10b8fbddf644898c7e3131163627,
+        type: 2}
+      propertyPath: newItemType
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1301185466
 GameObject:
   m_ObjectHideFlags: 0
@@ -57003,7 +57299,7 @@ GameObject:
   - component: {fileID: 1301185467}
   - component: {fileID: 1301185469}
   - component: {fileID: 1301185468}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Teeth_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57079,7 +57375,7 @@ GameObject:
   - component: {fileID: 1321869221}
   - component: {fileID: 1321869223}
   - component: {fileID: 1321869222}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Teeth_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57154,7 +57450,7 @@ GameObject:
   - component: {fileID: 1328996835}
   - component: {fileID: 1328996834}
   - component: {fileID: 1328996836}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Point Light (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57276,7 +57572,7 @@ MonoBehaviour:
   FogTransitionSize: 5
   MaxLightDistance: 128
   AboveFogPercent: 0.1
-  Offset: {x: 2383.9062, y: 2383.9062, z: 0}
+  Offset: {x: 2503.5325, y: 2503.5325, z: 0}
 --- !u!1 &1331262893
 GameObject:
   m_ObjectHideFlags: 0
@@ -57287,7 +57583,7 @@ GameObject:
   - component: {fileID: 1331262895}
   - component: {fileID: 1331262894}
   - component: {fileID: 1331262896}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spot Light (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57367,7 +57663,7 @@ GameObject:
   - component: {fileID: 1344773297}
   - component: {fileID: 1344773299}
   - component: {fileID: 1344773298}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Particle System (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62452,7 +62748,7 @@ GameObject:
   - component: {fileID: 1349285021}
   - component: {fileID: 1349285020}
   - component: {fileID: 1349285019}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spot Light (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62534,7 +62830,7 @@ GameObject:
   - component: {fileID: 1370702134}
   - component: {fileID: 1370702133}
   - component: {fileID: 1370702132}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Realistic_White_Male_Low_Poly (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62700,7 +62996,7 @@ GameObject:
   - component: {fileID: 1408189259}
   - component: {fileID: 1408189258}
   - component: {fileID: 1408189257}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Realistic_White_Male_Low_Poly (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62790,7 +63086,7 @@ GameObject:
   - component: {fileID: 1425221669}
   - component: {fileID: 1425221668}
   - component: {fileID: 1425221670}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Realistic_White_Male_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62876,7 +63172,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1426515454}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Non-Interactable Level Assets
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62896,10 +63192,9 @@ Transform:
   - {fileID: 1049285658}
   - {fileID: 264270581}
   - {fileID: 834018570}
-  - {fileID: 1235632394}
   - {fileID: 1967738256}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1430232738
 GameObject:
@@ -62912,7 +63207,7 @@ GameObject:
   - component: {fileID: 1430232739}
   - component: {fileID: 1430232741}
   - component: {fileID: 1430232740}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Eye_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62987,7 +63282,7 @@ GameObject:
   - component: {fileID: 1430650605}
   - component: {fileID: 1430650604}
   - component: {fileID: 1430650603}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spot Light (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63067,7 +63362,7 @@ GameObject:
   - component: {fileID: 1474587207}
   - component: {fileID: 1474587206}
   - component: {fileID: 1474587208}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Point Light (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63201,7 +63496,7 @@ GameObject:
   - component: {fileID: 1482482346}
   - component: {fileID: 1482482348}
   - component: {fileID: 1482482347}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Teeth_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63278,7 +63573,7 @@ GameObject:
   - component: {fileID: 1496742103}
   - component: {fileID: 1496742102}
   - component: {fileID: 1496742101}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Realistic_White_Male_Low_Poly (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63367,7 +63662,7 @@ GameObject:
   - component: {fileID: 1502797958}
   - component: {fileID: 1502797960}
   - component: {fileID: 1502797959}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Eye_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63443,7 +63738,7 @@ GameObject:
   - component: {fileID: 1530147809}
   - component: {fileID: 1530147811}
   - component: {fileID: 1530147810}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Teeth_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63525,6 +63820,7 @@ GameObject:
   - component: {fileID: 1534460193}
   - component: {fileID: 1534460192}
   - component: {fileID: 1534460191}
+  - component: {fileID: 1534460201}
   m_Layer: 9
   m_Name: First Pass Cam
   m_TagString: Untagged
@@ -63647,7 +63943,7 @@ MonoBehaviour:
   MapToLDR: 0
   RemoveColorBanding: 1
   MatrixVP:
-    e00: 2.0992785
+    e00: 2.0978298
     e01: 0
     e02: 0
     e03: 0
@@ -63664,7 +63960,7 @@ MonoBehaviour:
     e32: 1
     e33: 25
   LastMatrixVP:
-    e00: 2.0992785
+    e00: 2.0978298
     e01: 0
     e02: 0
     e03: 0
@@ -63799,7 +64095,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 8400000, guid: 3c4086a5450cfe14d8bef33a43ad0a23, type: 2}
+  m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -63820,8 +64116,20 @@ Transform:
   m_LocalScale: {x: 1, y: 1.1316751, z: 1.1316751}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1534460201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1534460190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c55d5f8055f22c46ac2c998e37431bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PostProcessingMat: {fileID: 2100000, guid: a0736da39f2c5b74f84ddc960035c40f, type: 2}
 --- !u!1 &1544982946
 GameObject:
   m_ObjectHideFlags: 0
@@ -63891,6 +64199,49 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1544982946}
   m_CullTransparentMesh: 0
+--- !u!1 &1548705379
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1548705381}
+  - component: {fileID: 1548705380}
+  m_Layer: 0
+  m_Name: Two
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1548705380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1548705379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0492f0f4d8cdb3b4788ecccc8c2c170c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemReference: {fileID: 11400000, guid: 746c93a94ff98204490ac7c8d26a65db, type: 2}
+  startingPercent: 0
+  otherOne: {fileID: 396662033}
+--- !u!4 &1548705381
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1548705379}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.5264238, y: -30.160002, z: 0.0058565736}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1558561661
 GameObject:
   m_ObjectHideFlags: 0
@@ -63978,7 +64329,7 @@ GameObject:
   - component: {fileID: 1576990837}
   - component: {fileID: 1576990836}
   - component: {fileID: 1576990838}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64100,7 +64451,7 @@ MonoBehaviour:
   FogTransitionSize: 5
   MaxLightDistance: 128
   AboveFogPercent: 0.1
-  Offset: {x: 2384.832, y: 2384.832, z: 0}
+  Offset: {x: 2504.4583, y: 2504.4583, z: 0}
 --- !u!1 &1584210770
 GameObject:
   m_ObjectHideFlags: 0
@@ -64112,7 +64463,7 @@ GameObject:
   - component: {fileID: 1584210771}
   - component: {fileID: 1584210773}
   - component: {fileID: 1584210772}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Eye_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64187,7 +64538,7 @@ GameObject:
   - component: {fileID: 1614517695}
   - component: {fileID: 1614517697}
   - component: {fileID: 1614517696}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Particle System (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69273,7 +69624,7 @@ GameObject:
   - component: {fileID: 1616151467}
   - component: {fileID: 1616151469}
   - component: {fileID: 1616151468}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Teeth_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69348,7 +69699,7 @@ GameObject:
   - component: {fileID: 1622231713}
   - component: {fileID: 1622231712}
   - component: {fileID: 1622231714}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spot Light (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69428,7 +69779,7 @@ GameObject:
   - component: {fileID: 1623124532}
   - component: {fileID: 1623124531}
   - component: {fileID: 1623124533}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spot Light (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69508,7 +69859,7 @@ GameObject:
   - component: {fileID: 1643014514}
   - component: {fileID: 1643014513}
   - component: {fileID: 1643014515}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Point Light (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69630,7 +69981,7 @@ MonoBehaviour:
   FogTransitionSize: 5
   MaxLightDistance: 128
   AboveFogPercent: 0.1
-  Offset: {x: 2384.832, y: 2384.832, z: 0}
+  Offset: {x: 2504.4583, y: 2504.4583, z: 0}
 --- !u!1 &1678655545
 GameObject:
   m_ObjectHideFlags: 0
@@ -69642,7 +69993,7 @@ GameObject:
   - component: {fileID: 1678655546}
   - component: {fileID: 1678655548}
   - component: {fileID: 1678655547}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Teeth_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69718,7 +70069,7 @@ GameObject:
   - component: {fileID: 1686516388}
   - component: {fileID: 1686516390}
   - component: {fileID: 1686516389}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Eye_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69793,7 +70144,7 @@ GameObject:
   - component: {fileID: 1691230103}
   - component: {fileID: 1691230102}
   - component: {fileID: 1691230104}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spot Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69863,49 +70214,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zAnchor: 9
   zWaveMag: 15
---- !u!1 &1702852241
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1702852243}
-  - component: {fileID: 1702852242}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1702852242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1702852241}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b128a5a2460d9a489d6964ceebd6c38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingLooseObject: 1
-  startingItemType: 1
-  startingCapacity: 100
---- !u!4 &1702852243
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1702852241}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -14.64, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 19
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1713840617
 GameObject:
   m_ObjectHideFlags: 0
@@ -69986,7 +70294,7 @@ GameObject:
   - component: {fileID: 1723902596}
   - component: {fileID: 1723902598}
   - component: {fileID: 1723902597}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Eye_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70062,7 +70370,7 @@ GameObject:
   - component: {fileID: 1744695683}
   - component: {fileID: 1744695685}
   - component: {fileID: 1744695684}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Eye_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70137,7 +70445,7 @@ GameObject:
   - component: {fileID: 1766976376}
   - component: {fileID: 1766976375}
   - component: {fileID: 1766976377}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Point Light (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70272,7 +70580,7 @@ GameObject:
   - component: {fileID: 1782349385}
   - component: {fileID: 1782349384}
   - component: {fileID: 1782349383}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Realistic_White_Male_Low_Poly (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70352,6 +70660,62 @@ Transform:
   m_Father: {fileID: 264270581}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1785165809
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -3.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -26.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.13052624
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.9914449
+      objectReference: {fileID: 0}
+    - target: {fileID: 4482941438363768, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_RootOrder
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 114381964543872880, guid: 75ba10b8fbddf644898c7e3131163627,
+        type: 2}
+      propertyPath: makeNewLooseItem
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1882317005284920, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+      propertyPath: m_Name
+      value: LooseItem (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114381964543872880, guid: 75ba10b8fbddf644898c7e3131163627,
+        type: 2}
+      propertyPath: newItemType
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 75ba10b8fbddf644898c7e3131163627, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1805122251 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: f6375c6a09730f54c9d4d349c9940865,
@@ -70382,7 +70746,7 @@ GameObject:
   - component: {fileID: 1810632014}
   - component: {fileID: 1810632016}
   - component: {fileID: 1810632015}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Eye_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70458,7 +70822,7 @@ GameObject:
   - component: {fileID: 1831152949}
   - component: {fileID: 1831152951}
   - component: {fileID: 1831152950}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Teeth_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70533,7 +70897,7 @@ GameObject:
   - component: {fileID: 1845364097}
   - component: {fileID: 1845364096}
   - component: {fileID: 1845364095}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spot Light (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70614,7 +70978,7 @@ GameObject:
   - component: {fileID: 1856881021}
   - component: {fileID: 1856881023}
   - component: {fileID: 1856881022}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Eye_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70760,7 +71124,7 @@ Rigidbody:
   m_Drag: 3
   m_AngularDrag: 5
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 1
   m_Constraints: 56
   m_CollisionDetection: 1
@@ -70824,13 +71188,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1863181422}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.64, y: -29.02, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_LocalRotation: {x: 0.106807426, y: 0.32512096, z: -0.036985386, w: 0.9388933}
+  m_LocalPosition: {x: 12.71, y: -29.02, z: 4}
+  m_LocalScale: {x: 4, y: 4, z: 0.6}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 12.98, y: 38.2, z: 0}
 --- !u!1 &1891939011
 GameObject:
   m_ObjectHideFlags: 0
@@ -70843,7 +71207,7 @@ GameObject:
   - component: {fileID: 1891939015}
   - component: {fileID: 1891939014}
   - component: {fileID: 1891939013}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Realistic_White_Male_Low_Poly (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70932,7 +71296,7 @@ GameObject:
   - component: {fileID: 1903667431}
   - component: {fileID: 1903667433}
   - component: {fileID: 1903667432}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Eye_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71009,7 +71373,7 @@ GameObject:
   - component: {fileID: 1907978101}
   - component: {fileID: 1907978100}
   - component: {fileID: 1907978099}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Model_Pool (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71100,7 +71464,7 @@ GameObject:
   - component: {fileID: 1927565258}
   - component: {fileID: 1927565257}
   - component: {fileID: 1927565259}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spot Light (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71181,7 +71545,7 @@ GameObject:
   - component: {fileID: 1934693351}
   - component: {fileID: 1934693353}
   - component: {fileID: 1934693352}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Eye_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71256,7 +71620,7 @@ GameObject:
   - component: {fileID: 1940730509}
   - component: {fileID: 1940730511}
   - component: {fileID: 1940730510}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Particle System (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76656,7 +77020,7 @@ GameObject:
   - component: {fileID: 1962825697}
   - component: {fileID: 1962825699}
   - component: {fileID: 1962825698}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Eye_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76732,7 +77096,7 @@ GameObject:
   - component: {fileID: 1967738255}
   - component: {fileID: 1967738254}
   - component: {fileID: 1967738253}
-  m_Layer: 4
+  m_Layer: 10
   m_Name: Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76804,7 +77168,7 @@ Transform:
   m_LocalScale: {x: 10, y: 1, z: 10}
   m_Children: []
   m_Father: {fileID: 1426515454}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1978212657
 GameObject:
@@ -76818,7 +77182,7 @@ GameObject:
   - component: {fileID: 1978212661}
   - component: {fileID: 1978212660}
   - component: {fileID: 1978212659}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Realistic_White_Male_Low_Poly (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76907,7 +77271,7 @@ GameObject:
   - component: {fileID: 1992552933}
   - component: {fileID: 1992552935}
   - component: {fileID: 1992552934}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Teeth_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77039,6 +77403,26 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: f6375c6a09730f54c9d4d349c9940865, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f6375c6a09730f54c9d4d349c9940865, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: f6375c6a09730f54c9d4d349c9940865, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: f6375c6a09730f54c9d4d349c9940865, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: f6375c6a09730f54c9d4d349c9940865, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6375c6a09730f54c9d4d349c9940865, type: 3}
   m_IsPrefabAsset: 0
@@ -77052,7 +77436,7 @@ GameObject:
   - component: {fileID: 2009236025}
   - component: {fileID: 2009236024}
   - component: {fileID: 2009236026}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spot Light (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77133,7 +77517,7 @@ GameObject:
   - component: {fileID: 2021031007}
   - component: {fileID: 2021031009}
   - component: {fileID: 2021031008}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Eye_Mesh_Low_Poly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77239,7 +77623,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2035104853
 MonoBehaviour:
@@ -77263,49 +77647,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea3ab80cf314b9d4a865ab2004cdb2d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &2051543615
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2051543617}
-  - component: {fileID: 2051543616}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2051543616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2051543615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c67ff8291dd984a4ba644ebd2157ef4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingLooseObject: 1
-  startingEquipmentType: 0
-  startingDamagedCondition: 0
---- !u!4 &2051543617
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2051543615}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.28, y: -19.8, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 20
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2063625667
 GameObject:
   m_ObjectHideFlags: 0
@@ -77422,7 +77763,7 @@ Transform:
   - {fileID: 374467954}
   - {fileID: 1121563503}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2063625673
 MonoBehaviour:
@@ -77515,7 +77856,7 @@ GameObject:
   - component: {fileID: 2082669843}
   - component: {fileID: 2082669842}
   - component: {fileID: 2082669844}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spot Light (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77684,7 +78025,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2125555175
 GameObject:
@@ -77698,7 +78039,7 @@ GameObject:
   - component: {fileID: 2125555179}
   - component: {fileID: 2125555178}
   - component: {fileID: 2125555177}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Realistic_White_Male_Low_Poly (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
