@@ -8,6 +8,8 @@ public class LightMovement : MonoBehaviour {
 
     public float zWaveMag = 2.5f;
 
+    public float xWaveMag;
+
     Vector3 conv;
 
     private void Start()
@@ -16,7 +18,8 @@ public class LightMovement : MonoBehaviour {
     }
 
     void Update () {
-        conv.z = zAnchor + zWaveMag * Mathf.Sin(Time.time);
+        conv.z = zAnchor + zWaveMag * Mathf.Sin(Time.time * 2);
+        conv.x += xWaveMag * Mathf.Sin (30 * Time.time);
         transform.position = conv;
 	}
 }

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 382c83ebf28bffb439cd9543ff0b0124, type: 3}
+  m_Name: CharacterData
+  m_EditorClassIdentifier: 
+  force_floatingBoost: 10
+  force_groundedBoost: 10
+  force_walkingFoce: 10
+  range_interaction: 1.5
+  range_highlight: 1.5
+  time_DropRecovery: 0.2
+  time_Action: 0.2

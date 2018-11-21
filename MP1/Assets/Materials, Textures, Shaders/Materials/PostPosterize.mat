@@ -76,16 +76,18 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
+    - _LinearBoost: 0.35
     - _Metallic: 0
     - _Mode: 0
     - _NormalizePower: 0
     - _OcclusionStrength: 1
+    - _OutputBoost: 1
     - _Parallax: 0.02
-    - _PosterizeBW: 75
-    - _PosterizeColor: 10
+    - _PosterizeBW: 20
+    - _PosterizeColor: 5
     - _PosterizeEffectScale: 0.784
     - _PosterizePower: 19.9
-    - _RealismPower: 0.51
+    - _RealismPower: 0.15
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1

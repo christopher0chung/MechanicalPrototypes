@@ -228,4 +228,4 @@ public class MP2_CharacterMovementController : MonoBehaviour, MP2_IConstructable
 }
 
 public enum Enum_MP2_ID { Player0, Player1 }
-public enum Enum_MP2_ControlState { Character, Menu, Station }
+public enum Enum_MP2_ControlState { Character, Menu, Station, InterruptableAction}
